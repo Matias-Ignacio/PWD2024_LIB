@@ -78,7 +78,8 @@
       <a href="persona_nuevo.php" class="btn btn-primary" role="button">Agregar nueva persona</a>
       <a href="../auto/auto_index.php" class="btn btn-primary" role="button">Ver Listado de Autos</a>
   </div>
-  <div><img src="../grafico/grafico.php" alt=""></div>
+  <div><img src="../grafico/grafico2.php" alt=""></div>
+  <div><?php include_once('../Librerias/geoip2/examples/benchmark.php'); ?></div>
 </div>
 
 <!-- Footer -->
