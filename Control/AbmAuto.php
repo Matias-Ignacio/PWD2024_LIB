@@ -171,6 +171,26 @@ class AbmAuto{
     return $arreglo;
     }
     
+    /**
+     * Obtiene la cantidad de autos agrupados por marca
+     * 
+     * Este método llama a la clase `Auto` para obtener la cantidad de autos
+     * por cada marca registrada en la base de datos. Verifica si los datos
+     * se obtuvieron correctamente y devuelve el resultado o `false` en caso contrario.
+     * @return array  Devuelve un array con las marcas y la cantidad de autos, o false si no se obtienen datos.
+     */
+    public function obtenerCantidadAutosPorMarca(){
+        // Instanciar la clase Auto
+        $objAuto = new Auto();
+        
+        // Llamar al método de la clase Auto para obtener la cantidad de autos por marca
+        if($objAuto->obtenerCantidadAutosPorMarca()){// Verificar si se obtuvieron resultados
+            $resultado = $objAuto->obtenerCantidadAutosPorMarca(); // Devolver los datos de marcas y cantidades
+        }else{
+            $resultado = false; 
+        }
+        return $resultado;
+    }
 
 /**
  * Validar en el servidor 

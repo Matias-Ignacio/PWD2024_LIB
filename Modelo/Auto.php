@@ -167,5 +167,30 @@ class Auto {
         }
         return $arreglo;
     }
+    /**
+     * Obtiene la cantidad de autos agrupados por marca 
+     * Ejecuta una consulta SQL para contar la cantidad de autos agrupados por marca
+     * Devuelve un array con los resultados o false en caso de error.
+     * @return array Devuelve un array con las marcas y la cantidad de autos, o false si ocurre un error.
+     */
+    public function obtenerCantidadAutosPorMarca(){
+        $base = new BaseDatos();
+        $sql = "SELECT Marca, COUNT(*) as cantidad FROM auto GROUP BY Marca";
+        if($base->Iniciar()){
+            if($base->Ejecutar($sql)){
+                $resultado = [];
+                while ($row = $base->Registro()){
+                    $resultado[] = $row;
+                }
+            }else{
+                $this->mensajeoperacion = $base->getError();
+                $resultado = false;
+            }
+        }else{
+            $this->mensajeoperacion = $base->getError();
+            $resultado = false;
+        }
+        return $resultado;
+    }
 }
 ?>
