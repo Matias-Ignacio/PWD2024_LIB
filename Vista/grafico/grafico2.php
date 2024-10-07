@@ -7,7 +7,7 @@ require_once ('../Librerias/jpGraph/jpgraph_pie.php');
 
 
 // Some data
-//$data = array(40,21,17,14,23);
+$data = array(40,21,17,14,23);
 
 // Create the Pie Graph. 
 $graph = new PieGraph(350,250);

@@ -12,6 +12,8 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../auto/auto_index.php">Auto</a></li>
               <li><a class="dropdown-item" href="../persona/persona_index.php">Persona</a></li>
+              <li><a class="dropdown-item" href="../grafico/verGraficoAuto.php">Grafico Auto</a></li>
+              <li><a class="dropdown-item" href="../grafico/verGraficoPersona.php">Grafico Persona</a></li>
             </ul>
           </li>
         </ul>
