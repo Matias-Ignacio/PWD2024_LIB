@@ -192,6 +192,8 @@ class AbmAuto{
         return $resultado;
     }
 
+
+
 /**
  * Validar en el servidor 
  * Recibe como parametro el arreglo completo y la clave aser validada
@@ -221,7 +223,7 @@ class AbmAuto{
 
 /**
  * Validar en el servidor 
- * Recibe como parametro el arreglo completo y la clave aser validada
+ * Recibe como parametro el arreglo completo y la clave a ser validada
  * @param array
  * @return boolean
  */

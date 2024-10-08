@@ -12,8 +12,18 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../auto/auto_index.php">Auto</a></li>
               <li><a class="dropdown-item" href="../persona/persona_index.php">Persona</a></li>
+            </ul>
+          </li>
+
+          <!-- Graficos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gr&aacute;ficos</a>
+            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../grafico/verGraficoAuto.php">Grafico Auto</a></li>
               <li><a class="dropdown-item" href="../grafico/verGraficoPersona.php">Grafico Persona</a></li>
+              <li><a class="dropdown-item" href="../grafico/03_ver_grafico_cantPersonas_marca.php">Grafico de radar - Personas-Marca</a></li>
+              <li><a class="dropdown-item" href="../grafico/04_verGraficoAuto_radar.php">Grafico de radar - Autos-Marca</a></li>
+              <li><a class="dropdown-item" href="../grafico/verGraficoPersona.php">Grafico Personas-Marca</a></li>
             </ul>
           </li>
         </ul>

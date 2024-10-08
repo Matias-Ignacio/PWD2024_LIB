@@ -71,16 +71,45 @@
         }
     ?>
     </tbody>
-</table>
+  </table>
 
   <!-- Boton agregar nueva persona -->
   <div class="container mt-3">
       <a href="persona_nuevo.php" class="btn btn-primary" role="button">Agregar nueva persona</a>
       <a href="../auto/auto_index.php" class="btn btn-primary" role="button">Ver Listado de Autos</a>
   </div>
-  <div><img src="../grafico/grafico2.php" alt=""></div>
-  <div><?php include_once('../Librerias/geoip2/examples/benchmark.php'); ?></div>
+  <br><br>
+
+
+  <!-- Graficos -->
+  
+  <!-- Grafico 1 -->
+  <div>
+    <img src="../grafico/grafico_1_lineas.php" alt="grafico_de_lineas_2D">
+  </div>
+  <br><br>
+
+  <!-- Grafico 2 -->
+  <div>
+    <img src="../grafico/grafico_2_torta_2D.php" alt="grafico_de_torta_2D">
+  </div>
+  <br><br>
+
+  <!-- Grafico 3 -->
+  <div>
+    <img src="../grafico/grafico_3_radar.php" alt="grafico_de_radar">
+  </div>
+  <br><br>
+
+  <!-- Grafico 4 -->
+  <div>
+    <img src="../grafico/grafico4.php" alt="grafico_de_torta_2D">
+  </div>
+  <br><br>
+
 </div>
+
+
 
 <!-- Footer -->
 <?php include_once '../Estructura/footer.php'; ?>

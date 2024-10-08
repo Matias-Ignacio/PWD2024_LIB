@@ -1,7 +1,6 @@
 <?php
 
 require_once ('../Librerias/jpGraph/jpgraph.php');
-require_once ('../Librerias/jpGraph/jpgraph_line.php');
 require_once ('../Librerias/jpGraph/jpgraph_pie.php');
 
 
@@ -12,7 +11,7 @@ $data = array(40,21,17,14,23);
 // Create the Pie Graph. 
 $graph = new PieGraph(350,250);
 
-$theme_class="DefaultTheme";
+$theme_class = "DefaultTheme";
 //$graph->SetTheme(new $theme_class());
 
 // Set A title for the plot
