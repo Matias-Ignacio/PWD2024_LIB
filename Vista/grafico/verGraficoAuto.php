@@ -13,5 +13,10 @@ include_once '../Estructura/header.php';
     <img src="graficarAutoPorMarca.php" alt="">
 </div>
 
+<br><br>
+<div class="text-center">
+    <img src="graficoAuto.php" alt="Grafico Auto">
+</div>
+
 <!-- Footer -->
 <?php include_once '../Estructura/footer.php'; ?>
