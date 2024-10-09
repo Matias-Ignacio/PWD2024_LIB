@@ -19,11 +19,10 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gr&aacute;ficos</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../grafico/verGraficoAuto.php">Grafico Auto</a></li>
-              <li><a class="dropdown-item" href="../grafico/verGraficoPersona.php">Grafico Persona</a></li>
-              <li><a class="dropdown-item" href="../grafico/03_ver_grafico_cantPersonas_marca.php">Grafico de radar - Personas-Marca</a></li>
-              <li><a class="dropdown-item" href="../grafico/04_verGraficoAuto_radar.php">Grafico de radar - Autos-Marca</a></li>
-              <li><a class="dropdown-item" href="../grafico/verGraficoPersona.php">Grafico Personas-Marca</a></li>
+              <li><a class="dropdown-item" href="../grafico/01_verGraficoAuto.php">Gr&aacute;fico de torta 2D y 3D - Cantidad de autos (%) por marca</a></li>
+              <li><a class="dropdown-item" href="../grafico/02_verGraficoPersona.php">Gr&aacute;fico de torta - Cantidad de personas (%) con y sin auto</a></li>
+              <li><a class="dropdown-item" href="../grafico/03_ver_grafico_cantPersonas_marca.php">Gr&aacute;fico de barras - Cantidad de personas por marca</a></li>
+              <li><a class="dropdown-item" href="../grafico/04_verGraficoAuto_radar.php">Gr&aacute;fico de radar - Cantidad de autos por marca</a></li>
             </ul>
           </li>
         </ul>

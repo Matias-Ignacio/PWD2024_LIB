@@ -1,83 +1,79 @@
 <?php
 // phpinfo();
-$titulo = "Gráfico 3 - cantidad de personas que tienen cierta marca de auto"; // Título en la pestaña
+$titulo = "TP 5 - Ver Grafico de personas"; // Título en la pestaña
 // include_once '../Estructura/header.php';
 require_once '../../Control/AbmAuto.php';  
-require_once '../../Control/AbmPersona.php';
+require_once '../../Control/AbmPersona.php';  
+
 require_once '../../Modelo/Auto.php'; 
 require_once '../../Modelo/Persona.php';
 require_once '../../Modelo/Conector/BaseDatos.php';
+
 require_once ('../Librerias/jpGraph/jpgraph.php');
-require_once ('../Librerias/jpGraph/jpgraph_pie.php'); // La librería para gráficos de torta
+require_once ('../Librerias/jpGraph/jpgraph_bar.php'); //La librería para gráficos de torta
 
 $objAbmPersona = new AbmPersona();
 $objAbmAuto = new AbmAuto();
 $listaAutos = $objAbmAuto->buscar(null);
 $listaPersona = $objAbmPersona->buscar(null);
 
-// Array para almacenar la cantidad de personas por marca
+//Array para almacenar la cantidad de personas por marca
 $cantidadPersonasPorMarca = [];
 
-// Inicializar el array con las marcas y contadores
-foreach ($listaAutos as $auto) {
-    $marca = $auto->getMarca(); // Obtén la marca del auto
-    $dniDuenio = $auto->getObjDuenio()->getNroDni(); // Obtén el DNI del dueño
+if(count($listaPersona) > 0)
+{
+    foreach($listaPersona as $persona)
+    {
+        $i = 0;
+        $tieneAuto = false; //Bandera
 
-    // Si la marca no existe en el array, inicialízala
-    if (!isset($cantidadPersonasPorMarca[$marca])) {
-        $cantidadPersonasPorMarca[$marca] = [
-            'cantidad' => 0,
-            'duenos' => [] // Array para almacenar los DNIs de los dueños
-        ];
+        while($i < count($listaAutos) && !$tieneAuto)
+        {
+            if($persona->getNroDni() == $listaAutos[$i]->getObjDuenio()->getNroDni())
+            {
+                $marca = $listaAutos[$i]->getMarca(); //Obtener la marca del auto
+                $tieneAuto = true;
+
+                // Si la marca no está en el array, la agregamos con un contador inicial de 1
+                if (!isset($cantidadPersonasPorMarca[$marca]))
+                {
+                    $cantidadPersonasPorMarca[$marca] = 1;
+                }else{
+                    // Si ya está en el array, simplemente incrementamos el contador
+                    $cantidadPersonasPorMarca[$marca]++;
+                }
+            }
+            $i++;
+        }
     }
-
-    // Solo contar si el dueño no está ya en la lista de dueños de esa marca
-    if (!in_array($dniDuenio, $cantidadPersonasPorMarca[$marca]['duenos'])) {
-        $cantidadPersonasPorMarca[$marca]['cantidad'] += 1; // Incrementa la cantidad de dueños
-        $cantidadPersonasPorMarca[$marca]['duenos'][] = $dniDuenio; // Agrega el DNI a la lista de dueños
-    }
 }
 
-// Convertir el array a solo marcas y cantidades
-$resultado = [];
-foreach ($cantidadPersonasPorMarca as $marca => $datos) {
-    $resultado[] = [
-        'Marca' => $marca,
-        'Cantidad' => $datos['cantidad']
-    ];
-}
+//Ahora que tengo $cantidadPersonasPorMarca, puedo generar el gráfico
 
-// Ahora $resultado tiene el formato deseado
-print_r($resultado);
+//Configurar los datos para el gráfico
+$labels = array_keys($cantidadPersonasPorMarca); //Las marcas
+$valores = array_values($cantidadPersonasPorMarca); //Las cantidades de personas que tienen autos de esas marcas
 
-// Comprobar si el resultado está vacío
-if (empty($resultado)) {
-    die("No se encontraron datos para generar el gráfico.");
-}
+//Configurar el gráfico (gráfico de torta o puedes cambiar a barras si prefieres)
+$graph = new Graph(900, 400); //Cambiar a PieGraph para gráfico circular
 
-// Configurar los datos para el gráfico
-$labels = array();
-$valores = array();
-
-// Aquí se asume que $resultado es el array que contiene las marcas y cantidades de personas que tienen autos
-foreach ($resultado as $dato) {
-    $labels[] = $dato['Marca']; // Añadir la marca a las etiquetas
-    $valores[] = $dato['Cantidad']; // Añadir la cantidad de dueños a los valores
-}
-
-// Configurar el gráfico
-$graph = new PieGraph(900, 350); // Cambiar a PieGraph para gráfico circular
-$graph->SetShadow();
+//Escala del gráfico
+$graph->SetScale("textlin");
 
 $graph->title->Set('Cantidad de Personas por Marca de Auto');
 
-// Crear el gráfico de torta
-$p1 = new PiePlot($valores);
-$p1->SetLegends($labels); // Asignar leyendas con las marcas
-$p1->SetSliceColors(array('lightblue', 'orange', 'green', 'red', 'purple', 'yellow')); // Colores para las secciones
+//Crear el gráfico de barras
+$barplot = new BarPlot($valores);
 
-$graph->Add($p1);
+$barplot->Legend($labels); //Asignar leyendas con las marcas
+$barplot->SetFillColor(array('lightblue')); //Color para las barras
+$barplot->SetShadow('gray', 3); //Sombra de las barras
 
-// Mostrar el gráfico
+//Agregar el gráfico de barras al gráfico principal
+$graph->Add($barplot);
+
+//Asignar las etiquetas al eje X
+$graph->xaxis->SetTickLabels($labels);
+
+//Mostrar el gráfico
 $graph->Stroke();
-?>

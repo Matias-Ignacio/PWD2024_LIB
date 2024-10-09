@@ -9,7 +9,7 @@ include_once '../Estructura/header.php';
 </div>
 <!-- GRAFICO -->
 <div class="text-center">  
-    <img src="graficarPersonaAuto.php" alt="">
+    <img src="02_graficarPersonaAuto.php" alt="">
 </div>
 
 <!-- Footer -->

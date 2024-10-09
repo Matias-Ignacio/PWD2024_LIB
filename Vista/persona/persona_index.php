@@ -94,19 +94,6 @@
     <img src="../grafico/grafico_2_torta_2D.php" alt="grafico_de_torta_2D">
   </div>
   <br><br>
-
-  <!-- Grafico 3 -->
-  <div>
-    <img src="../grafico/grafico_3_radar.php" alt="grafico_de_radar">
-  </div>
-  <br><br>
-
-  <!-- Grafico 4 -->
-  <div>
-    <img src="../grafico/grafico4.php" alt="grafico_de_torta_2D">
-  </div>
-  <br><br>
-
 </div>
 
 

@@ -1,5 +1,5 @@
 <?php 
-    $titulo = "Gráfico 3 - cantidad de personas que tienen cierta marca de auto"; // Título en la pestaña
+    $titulo = "Gráfico 3 - Cantidad de personas que tienen cierta marca de auto"; // Título en la pestaña
     include_once '../Estructura/header.php';
     // require_once ('../Librerias/jpGraph/jpgraph.php');
     // require_once ('../Librerias/jpGraph/jpgraph_bar.php');
