@@ -1,6 +1,4 @@
 <?php // content="text/plain; charset=utf-8"
-
-
 require_once "../Librerias/jpGraph/jpgraph.php";
 require_once "../Librerias/jpGraph/jpgraph_pie.php";
 require_once "../Librerias/jpGraph/jpgraph_pie3d.php";
@@ -16,21 +14,12 @@ if($arregloAuto != null){
         $arregloMarcas[] = $auto -> getMarca();
     }
 }
-
 $nuevoArreglo = array_count_values($arregloMarcas);
-
 
 $data = array_values($nuevoArreglo);
 $marca = array_keys($nuevoArreglo);
 
-
-
-
-
-
-
 // Some data
-
 
 // Create the Pie Graph. 
 $graph = new PieGraph(650,700);

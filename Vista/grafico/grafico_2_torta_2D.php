@@ -3,8 +3,6 @@
 require_once ('../Librerias/jpGraph/jpgraph.php');
 require_once ('../Librerias/jpGraph/jpgraph_pie.php');
 
-
-
 // Some data
 $data = array(40,21,17,14,23);
 

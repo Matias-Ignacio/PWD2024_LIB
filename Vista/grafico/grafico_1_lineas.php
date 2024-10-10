@@ -3,8 +3,6 @@
 require_once ('../Librerias/jpGraph/jpgraph.php');
 require_once ('../Librerias/jpGraph/jpgraph_line.php');
 
-
-
 $datay1 = array(20,15,23,15,80,20,45,10,5,45,60);
 $datay2 = array(12,9,12,8,41,15,30,8,48,36,14,25);
 $datay3 = array(5,17,32,24,4,2,36,2,9,24,21,23);

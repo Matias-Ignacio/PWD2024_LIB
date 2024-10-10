@@ -1,14 +1,7 @@
 <?php
-// phpinfo();
 $titulo = "TP 5 - Ver Grafico de personas"; // Título en la pestaña
-// include_once '../Estructura/header.php';
-require_once '../../Control/AbmAuto.php';  
-require_once '../../Control/AbmPersona.php';  
 
-require_once '../../Modelo/Auto.php'; 
-require_once '../../Modelo/Persona.php';
-require_once '../../Modelo/Conector/BaseDatos.php';
-
+require_once "../../configuracion.php";
 require_once ('../Librerias/jpGraph/jpgraph.php');
 require_once ('../Librerias/jpGraph/jpgraph_pie.php'); //La librería para gráficos de torta
 

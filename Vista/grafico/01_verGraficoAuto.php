@@ -1,22 +1,41 @@
 <?php 
 $titulo = "TP 5 - Ver Grafico de autos"; // Título en la pestaña
 include_once '../Estructura/header.php';
-// require_once ('../Librerias/jpGraph/jpgraph.php');
-// require_once ('../Librerias/jpGraph/jpgraph_bar.php');
 ?>
 <!-- titulo -->
 <div >
     <h1 class='text-center mb-4 text-white'><?php echo $titulo;?></h1>
 </div>
-<!-- GRAFICO -->
-<div  class="text-center">  
-    <img src="01_graficarAutoPorMarca.php" alt="">
-</div>
 
-<br><br>
+<!-- GRAFICO TORTA - AUTOS-->
+<div  class="text-center">  
+    <img src="graficarAutoPorMarca.php" alt="">
+</div><br><br>
+
+
+<!-- GRAFICO TORTA- PERSONAS-->
+<div class="text-center">  
+    <img src="graficarPersonaAuto.php" alt="">
+</div><br><br>
+
+
+<!-- GRAFICO TORTA 3D-->
 <div class="text-center">
-    <img src="01_graficoAuto.php" alt="Grafico Auto">
-</div>
+    <img src="graficoAuto3d.php" alt="Grafico Auto">
+</div><br><br>
+
+
+<!-- GRAFICO BARRAS-->
+<div  class="text-center">  
+    <img src="graficarMarcaPorCantPersonas.php" alt="grafico_de_radar">
+</div><br><br>
+
+
+<!-- GRAFICO  RADAR-->
+<div  class="text-center">  
+    <img src="graficarAutoPorMarca_radar.php" alt="">
+</div><br><br>
+
 
 <!-- Footer -->
 <?php include_once '../Estructura/footer.php'; ?>
