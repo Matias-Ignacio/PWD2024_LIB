@@ -25,6 +25,14 @@
               <li><a class="dropdown-item" href="../grafico/04_verGraficoAuto_radar.php">Gr&aacute;fico de radar - Cantidad de autos por marca</a></li>
             </ul>
           </li>
+          <!-- Geolocalizacion -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Geolocalizacion</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../geolocalizacion/geoIp.php">Ingresa un IP para ver la ubicacion</a></li>
+              <li><a class="dropdown-item" href="../geolocalizacion/dosIps.php">Ingresa dos IPs para ver la distancia entre ellas</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
