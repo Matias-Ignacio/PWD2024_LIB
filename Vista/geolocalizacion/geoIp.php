@@ -13,13 +13,7 @@ include_once '../Estructura/header.php';
         <div class="form-group text-center">
             <label for="latitud" class='text-center mb-4 text-white'>Direccion IP:</label>
             <input type="text" id="ip" name="ip" class="form-control"><br><br>    
-        
-            <label for="latitud" class='text-center mb-4 text-white'>Latitud:</label>
-            <input type="text" id="latitud" name="latitud" class="form-control"><br><br>
-
-            <label for="longitud" class='text-center mb-4 text-white'>Longitud:</label>
-            <input type="text" id="longitud" name="longitud" class="form-control" ><br><br>
-
+            
             <input type="submit" value="Ver Mapa">
         </div>
     </form>

@@ -84,7 +84,7 @@ $distancia = calcularDistancia($lat1, $lon1, $lat2, $lon2);
     </tbody>
 </table>
 <body>
-    <h2 class='text-center mb-4 text-white'>Mapa de Geolocalización</h2>
+    <h2 class='text-center mb-4 text-white'>Distacia entre dos IPs</h2>
     <div id="map"></div>
     <div class="d-flex justify-content-center align-items-center">
         <button class="btn btn-primary mt-5" onclick="history.back();">Atr&aacute;s</button>
