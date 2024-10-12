@@ -144,18 +144,16 @@ INSERT INTO `persona` (`NroDni`, `Apellido`, `Nombre`, `fechaNac`, `Telefono`, `
 
 CREATE TABLE ciudad (
   ciu_id int(3) NOT NULL PRIMARY KEY,
-  ciu_nombre varchar(30) NOT NULL,
-  ciu_latitud varchar(30)
-  ciu_longitud varchar(30),
+  ciu_nombre varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- 
 -- Volcar la base de datos para la tabla `persona`
 -- 
-INSERT INTO ciudad (ciu_id, ciu_nombre, ciu_latitud, ciu_longitud) VALUES
-(1, Centenario, '-38.834654', '-68.131524'),
-(2, Neuquen, '-38.952228', '68.059113'),
-(3, Cipolletti, '-38.93861', '-67.993034'),
-(4, Plottier, '-38.951219', '-68.232254');
+INSERT INTO ciudad (ciu_id, ciu_nombre) VALUES
+(1, 'Centenario'),
+(2, 'Neuquen'),
+(3, 'Cipolletti'),
+(4, 'Plottier');
 -- -----------------------------------------------------------------
 
 CREATE TABLE comercio (
@@ -193,5 +191,5 @@ INSERT INTO comercio (com_id, com_nombre, ciu_id) VALUES
 ALTER TABLE `auto`
 ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`DniDuenio`) REFERENCES `persona` (`NroDni`);
 
-ALTER TABLE `ciudad`
+ALTER TABLE `comercio`
 ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_id`);

@@ -1,59 +1,39 @@
 <?php 
 class Ciudad {
-    private $id;
-    private $nombre;
-    private $latitud;
-    private $longitud;
+    private $ciu_id;
+    private $ciu_nombre;
 
     private $mensajeoperacion;
 
 
     public function __construct(){
-        $this->id="";
-        $this->nombre = "";
-        $this->latitud = "";
-        $this->longitud = "";
+        $this->ciu_id="";
+        $this->ciu_nombre = "";
         $this->mensajeoperacion ="";
     }
 
 
-    public function setear($id, $nombre, $latitud, $longitud)    {
-        $this->setid($id);
-        $this->setNombre($nombre);
-        $this->setlatitud($latitud);
-        $this->setlongitud($longitud);
+    public function setear($ciu_id, $ciu_nombre)    {
+        $this->setid($ciu_id);
+        $this->setNombre($ciu_nombre);
+
     }
 
 
     public function getid(){
-        return $this->id;
+        return $this->ciu_id;
     }
 
     public function setid($valor){
-        $this->id = $valor;
+        $this->ciu_id = $valor;
     }
 
-    public function getlatitud(){
-        return $this->latitud;
-    }
-
-    public function setlatitud($valor){
-        $this->latitud = $valor;
-    }
-
-    public function getlongitud(){
-        return $this->longitud;
-    }
-
-    public function setlongitud($valor){
-        $this->longitud = $valor;
-    }
     public function getNombre(){
-        return $this->nombre;
+        return $this->ciu_nombre;
     }
 
     public function setNombre($valor){
-        $this->nombre = $valor;
+        $this->ciu_nombre = $valor;
     }
 
     public function getmensajeoperacion(){
@@ -65,16 +45,14 @@ class Ciudad {
     }
 
  
-    public function buscar($id){
+    public function buscar($ciu_id){
         $base = new BaseDatos();
         $exito = false;
-        $sql = "Select * from ciudad where ciu_id = " . $id;
+        $sql = "Select * from ciudad where ciu_id = " . $ciu_id;
         if($base ->Iniciar()){
             if($base->Ejecutar($sql)){
                 if($row = $base->Registro()){
-                    $this -> setid($id);
-                    $this -> setlatitud($row['ciu_latitud']);
-                    $this -> setlongitud($row['ciu_longitud']);
+                    $this -> setid($ciu_id);
                     $this -> setNombre($row['ciu_nombre']);
                     $exito = true;
                 }
@@ -86,11 +64,9 @@ class Ciudad {
     public function insertar(){
         $resp = false;
         $base  =  new BaseDatos();
-        $sql  =  "INSERT INTO ciudad(ciu_id, ciu_nombre, ciu_latitud, ciu_longitud)  VALUES('"
-        .$this->getid()."', '"
-        .$this->getNombre()."', '"
-        .$this->getlatitud()."', '"
-        .$this->getlongitud()."', '";
+        $sql  =  "INSERT INTO ciudad(ciu_id, ciu_nombre)  VALUES("
+        .$this->getid().", '"
+        .$this->getNombre()."'";
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
                 $resp = true;
@@ -107,9 +83,7 @@ class Ciudad {
         $resp = false;
         $base = new BaseDatos();
         $sql = "UPDATE ciudad SET 
-        ciu_nombre = '".$this->getNombre()."', 
-        ciu_latitud = '".$this->getlatitud()."', 
-        ciu_longitud = '".$this->getlongitud()."', 
+        ciu_nombre = '".$this->getNombre()."'
         WHERE ciu_id = ".$this->getid();
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
@@ -152,7 +126,7 @@ class Ciudad {
                 
                 while ($row = $base->Registro()){
                     $obj = new Ciudad();
-                    $obj->setear($row['ciu_id'], $row['ciu_ombre'],$row['ciu_latitud'], $row['ciu_longitud']);
+                    $obj->setear($row['ciu_id'], $row['ciu_nombre']);
                     array_push($arreglo, $obj);
                 }
             }

@@ -28,6 +28,8 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../geolocalizacion/geoIp.php">Ingresa un IP para ver la ubicacion</a></li>
               <li><a class="dropdown-item" href="../geolocalizacion/dosIps.php">Ingresa dos IPs para ver la distancia entre ellas</a></li>
+              <li><a class="dropdown-item" href="../ciudad/index.php">Ciudades</a></li>
+              <li><a class="dropdown-item" href="../comercio/index.php">Comercios</a></li>
             </ul>
           </li>
         </ul>

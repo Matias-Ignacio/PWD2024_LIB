@@ -41,4 +41,28 @@ spl_autoload_register(function ($class_name){
     }
 });
 
+
+function dismount($object) {
+    $reflectionClass = new ReflectionClass(get_class($object));
+    $array = array();
+    foreach ($reflectionClass->getProperties() as $property) {
+        $property->setAccessible(true);
+        $array[$property->getName()] = $property->getValue($object);
+        $property->setAccessible(false);
+    }
+    return $array;
+}
+
+function convert_array($param) {
+    $_AAux= array();
+    if (!empty($param)) {
+        if (count($param)){
+            foreach($param as $obj) {
+                array_push($_AAux,dismount($obj));    
+            }
+        }
+    }
+    
+    return $_AAux;
+}
 ?>
