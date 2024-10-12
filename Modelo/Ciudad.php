@@ -2,7 +2,8 @@
 class Ciudad {
     private $id;
     private $nombre;
-    private $coordenada;
+    private $latitud;
+    private $longitud;
 
     private $mensajeoperacion;
 
@@ -10,15 +11,17 @@ class Ciudad {
     public function __construct(){
         $this->id="";
         $this->nombre = "";
-        $this->coordenada = "";
+        $this->latitud = "";
+        $this->longitud = "";
         $this->mensajeoperacion ="";
     }
 
 
-    public function setear($dni, $nombre, $coordenada)    {
-        $this->setid($dni);
+    public function setear($id, $nombre, $latitud, $longitud)    {
+        $this->setid($id);
         $this->setNombre($nombre);
-        $this->setcoordenada($coordenada);
+        $this->setlatitud($latitud);
+        $this->setlongitud($longitud);
     }
 
 
@@ -30,14 +33,21 @@ class Ciudad {
         $this->id = $valor;
     }
 
-    public function getCoordenada(){
-        return $this->coordenada;
+    public function getlatitud(){
+        return $this->latitud;
     }
 
-    public function setCoordenada($valor){
-        $this->coordenada = $valor;
+    public function setlatitud($valor){
+        $this->latitud = $valor;
     }
 
+    public function getlongitud(){
+        return $this->longitud;
+    }
+
+    public function setlongitud($valor){
+        $this->longitud = $valor;
+    }
     public function getNombre(){
         return $this->nombre;
     }
@@ -55,15 +65,16 @@ class Ciudad {
     }
 
  
-    public function buscar($dni){
+    public function buscar($id){
         $base = new BaseDatos();
         $exito = false;
-        $sql = "Select * from ciudad where id = " . $dni;
+        $sql = "Select * from ciudad where ciu_id = " . $id;
         if($base ->Iniciar()){
             if($base->Ejecutar($sql)){
                 if($row = $base->Registro()){
-                    $this -> setid($dni);
-                    $this -> setCoordenada($row['ciu_coordenada']);
+                    $this -> setid($id);
+                    $this -> setlatitud($row['ciu_latitud']);
+                    $this -> setlongitud($row['ciu_longitud']);
                     $this -> setNombre($row['ciu_nombre']);
                     $exito = true;
                 }
@@ -75,10 +86,11 @@ class Ciudad {
     public function insertar(){
         $resp = false;
         $base  =  new BaseDatos();
-        $sql  =  "INSERT INTO ciudad(ciu_id, ciu_nombre, ciu_coordenada)  VALUES('"
+        $sql  =  "INSERT INTO ciudad(ciu_id, ciu_nombre, ciu_latitud, ciu_longitud)  VALUES('"
         .$this->getid()."', '"
-        .$this->getCoordenada()."', '"
-        .$this->getNombre()."', '";
+        .$this->getNombre()."', '"
+        .$this->getlatitud()."', '"
+        .$this->getlongitud()."', '";
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
                 $resp = true;
@@ -95,8 +107,9 @@ class Ciudad {
         $resp = false;
         $base = new BaseDatos();
         $sql = "UPDATE ciudad SET 
-        ciu_coordenada = '".$this->getCoordenada()."', 
         ciu_nombre = '".$this->getNombre()."', 
+        ciu_latitud = '".$this->getlatitud()."', 
+        ciu_longitud = '".$this->getlongitud()."', 
         WHERE ciu_id = ".$this->getid();
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
@@ -139,7 +152,7 @@ class Ciudad {
                 
                 while ($row = $base->Registro()){
                     $obj = new Ciudad();
-                    $obj->setear($row['ciu_id'], $row['ciu_coordenada'], $row['ciu_ombre']);
+                    $obj->setear($row['ciu_id'], $row['ciu_ombre'],$row['ciu_latitud'], $row['ciu_longitud']);
                     array_push($arreglo, $obj);
                 }
             }
