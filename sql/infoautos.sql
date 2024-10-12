@@ -142,9 +142,55 @@ INSERT INTO `persona` (`NroDni`, `Apellido`, `Nombre`, `fechaNac`, `Telefono`, `
 ('32965874', 'Campos', 'Ricardo', '1981-07-09', '299-9587458', 'Jujuy 13'),
 ('30874563', 'Salas', 'Gabriela', '1994-02-24', '299-9685747', 'Entre Rios 121');
 
+CREATE TABLE ciudad (
+  ciu_id int(3) NOT NULL PRIMARY KEY,
+  ciu_nombre varchar(30),
+  ciu_coordenada varchar(30)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- 
+-- Volcar la base de datos para la tabla `persona`
+-- 
+INSERT INTO ciudad (ciu_id, ciu_nombre, ciu_coordenadas) VALUES
+(1, Centenario, ''),
+(2, Neuquen, ''),
+(3, Cipolletti, ''),
+(4, Plottier, '');
+-- -----------------------------------------------------------------
 
-ALTER TABLE `auto` ADD KEY `idTipoVehiculo` (`DniDuenio`);
+CREATE TABLE comercio (
+  com_id int(6) NOT NULL PRIMARY KEY,
+  com_nombre varchar(30),
+  ciu_id int(3)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 
+-- Volcar la base de datos para la tabla `comercio`
+-- 
+
+INSERT INTO comercio (com_id, com_nombre, ciu_id) VALUES
+(1, 'Panaderia Rico Pan', 1),
+(2, 'Panaderia Nacional', 1),
+(3, 'Taller de Psstas', 1),
+(4, 'Maestro Pizero', 1),
+(5, 'Panaderia el Roco', 2),
+(6, 'Tallarines Artesanales', 2),
+(7, 'Maestro de Pizas Neuquen', 2),
+(8, 'Panaderia sin Nombre', 2),
+(9, 'Empanadas YA!', 3),
+(10, 'Locro al plato frio', 3),
+(11, 'Empanadas Salteñas Cipolletti', 3),
+(12, 'Panaderia Nacional Cipo', 3),
+(13, 'Pastas Frescas sin limite', 4),
+(14, 'Empanadas Maestrulli', 4),
+(15, 'Pastas Finas La Nona', 4),
+(16, 'La mejor Pasta del Valle', 4);
+
+-- --------------------------------------------------------------
+
+/*ALTER TABLE `auto` ADD KEY `idTipoVehiculo` (`DniDuenio`);*/
 
 ALTER TABLE `auto`
 ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`DniDuenio`) REFERENCES `persona` (`NroDni`);
 
+ALTER TABLE `ciudad`
+ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_id`);
