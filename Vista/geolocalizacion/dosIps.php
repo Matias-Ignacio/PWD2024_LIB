@@ -16,18 +16,25 @@ include_once '../Estructura/header.php';
 -->
 
 <body>
-    <form id="form" name="form" action="mostrarLosPuntos.php" method="get" class="container_cine full-height p-4">
-        <div class="form-group text-center">
-            <label for="ip1" class="mb-4 text-white">IP 1:</label>
-            <input type="text" id="ip1" name="ip1" required><br><br>
-        
-            <label for="ip2" class=" mb-4 text-white">IP 2:</label>
-            <input type="text" id="ip2" name="ip2" required><br><br>
+        <form id="form" name="form" action="mostrarLosPuntos.php" method="get" class="container_cine full-height p-4">
+            <div class="form-group text-center">
+                <label for="ip1" class="mb-4 text-white">IP 1:</label>
+                <input type="text" id="ip1" name="ip1" class="form-control" ><br><br>
+                <div class="valid-feedback d-none" id="correcto1">Correcto</div>
+                <div class="invalid-feedback d-none" id="incorrecto1">Por favor, ingrese una IP valida</div>
+            
+                <label for="ip2" class=" mb-4 text-white">IP 2:</label>
+                <input type="text" id="ip2" name="ip2" class="form-control" ><br><br>
+                <div class="valid-feedback d-none" id="correcto2">¡Correcto!</div>
+                <div class="invalid-feedback d-none" id="incorrecto2">Por favor, ingrese una IP valida</div>
 
-            <input type="submit" value="Calcular Distancia">
-        </div>
-        
-    </form>
+                <input type="submit" value="Calcular Distancia">
+            </div>
+            
+        </form>
+
+
+    <script src="../Js/validacionDosIps.js"></script>
 </body>
 <!-- Footer -->
 <?php include_once '../Estructura/footer.php'; ?>
