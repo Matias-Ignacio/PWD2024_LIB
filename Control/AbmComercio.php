@@ -168,19 +168,15 @@ class AbmComercio{
  */
  public function vXc($param, $key){
     $bool   = true;
-    $options['com_nombre']     = array('options' => array("regexp"=>"/^[A-Z][A-z\sáéíóúüñÁÉÍÓÚÜÑ']{1,40}[A-z]$/"));
-    $options['com_id']   = array('options' => array("regexp"=>"/^[A-Z][A-Z]{2}[\s]{1}[0-9]{2}[0-9]$|^[A-Z][A-Z]{1}[\s]{1}[0-9]{3}[\s]{1}[A-Z]{1}[A-Z]$/"));
-    $options['Modelo']    = array('options' => array("regexp"=>"/^[3-9][0-9]$|^[1][9]{1}[3-9]{1}[0-9]$|^[2][0]{1}[0-9]{1}[0-9]$/"));
-    $options['ciu_id'] = array('options' => array("regexp"=>"/^[1-9][0-9]{5,6}[0-9]$/"));
+    $options['com_nombre']  = array('options' => array("regexp"=>"/^[A-Z][A-z\sáéíóúüñÁÉÍÓÚÜÑ']{1,40}[A-z]$/"));
+    $options['com_id']      = array('options' => array("regexp"=>"/^[1-9][0-9]{1,3}[0-9]$/"));
+    $options['ciu_id']      = array('options' => array("regexp"=>"/^[1-9][0-9]{1,3}[0-9]$/"));
 
     if ($param <> NULL)
     {                 
         if (($param[$key] != 'null') && (filter_var($param[$key], FILTER_VALIDATE_REGEXP, $options[$key]) !== FALSE)) {
-                //exepciones
-                if($key === 'Modelo'){
-                    $bool = ($param[$key] <= date("Y")) ? true : false;
-                }else{   $bool = true;  }
-            }else{    $bool = false;    }
+            $bool = true;  
+        }else{    $bool = false;    }
     }
     return $bool;
 }
@@ -194,21 +190,15 @@ class AbmComercio{
  */
 public function validarTodoComercio($param){
     $bool   = false;
-    $listaKey = ['com_id', 'com_nombre', 'Modelo', 'ciu_id'];
-    $options['com_nombre']     = array('options' => array("regexp"=>"/^[A-Z][A-z\sáéíóúüñÁÉÍÓÚÜÑ']{1,40}[A-z]$/"));
-    $options['com_id']   = array('options' => array("regexp"=>"/^[A-Z][A-Z]{2}[\s]{1}[0-9]{2}[0-9]$|^[A-Z][A-Z]{1}[\s]{1}[0-9]{3}[\s]{1}[A-Z]{1}[A-Z]$/"));
-    $options['Modelo']    = array('options' => array("regexp"=>"/^[3-9][0-9]$|^[1][9]{1}[3-9]{1}[0-9]$|^[2][0]{1}[0-9]{1}[0-9]$/"));
-    $options['ciu_id'] = array('options' => array("regexp"=>"/^[1-9][0-9]{5,6}[0-9]$/"));
+    $listaKey = ['com_id', 'com_nombre', 'ciu_id'];
+    $options['com_nombre']  = array('options' => array("regexp"=>"/^[A-Z][A-z\sáéíóúüñÁÉÍÓÚÜÑ']{1,40}[A-z]$/"));
+    $options['com_id']      = array('options' => array("regexp"=>"/^[1-9][0-9]{1,3}[0-9]$/"));
+    $options['ciu_id']      = array('options' => array("regexp"=>"/^[1-9][0-9]{1,3}[0-9]$/"));
     if ($param <> NULL)
     {
         foreach ($listaKey as $key){
             if (($param[$key] != 'null') && (filter_var($param[$key], FILTER_VALIDATE_REGEXP, $options[$key]) !== FALSE)) {
-                //exepciones
-                if($key === 'Modelo'){
-                    $bool = ($param[$key] <= date("Y")) ? true : false;
-                }else{
                     $bool = true;
-                }
             }else{
                 $bool = false;
             }

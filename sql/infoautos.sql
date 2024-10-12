@@ -151,11 +151,11 @@ CREATE TABLE ciudad (
 -- 
 -- Volcar la base de datos para la tabla `persona`
 -- 
-INSERT INTO ciudad (ciu_id, ciu_nombre, ciu_coordenadas) VALUES
-(1, Centenario, '', ''),
-(2, Neuquen, '', ''),
-(3, Cipolletti, '', ''),
-(4, Plottier, '', '');
+INSERT INTO ciudad (ciu_id, ciu_nombre, ciu_latitud, ciu_longitud) VALUES
+(1, Centenario, '-38.834654', '-68.131524'),
+(2, Neuquen, '-38.952228', '68.059113'),
+(3, Cipolletti, '-38.93861', '-67.993034'),
+(4, Plottier, '-38.951219', '-68.232254');
 -- -----------------------------------------------------------------
 
 CREATE TABLE comercio (
