@@ -97,7 +97,7 @@ class Ciudad {
         $sql = "UPDATE ciudad SET 
         ciu_coordenada = '".$this->getCoordenada()."', 
         ciu_nombre = '".$this->getNombre()."', 
-        WHERE id = ".$this->getid();
+        WHERE ciu_id = ".$this->getid();
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
                 $resp = true;
@@ -113,15 +113,15 @@ class Ciudad {
     public function eliminar(){
         $resp = false;
         $base = new BaseDatos();
-        $sql = "DELETE FROM Ciudad WHERE id = '".$this->getid()."'";
+        $sql = "DELETE FROM ciudad WHERE ciu_id = '".$this->getid()."'";
         if ($base->Iniciar()) {
             if ($base->Ejecutar($sql)) {
                 return true;
             }else{
-                $this->setmensajeoperacion("Tabla->eliminar: ".$base->getError());
+                $this->setmensajeoperacion("Ciudad->eliminar: ".$base->getError());
             }
         }else{
-            $this->setmensajeoperacion("Tabla->eliminar: ".$base->getError());
+            $this->setmensajeoperacion("Ciudad->eliminar: ".$base->getError());
         }
         return $resp;
     }
@@ -129,7 +129,7 @@ class Ciudad {
     public static function listar($parametro=""){
         $arreglo = array();
         $base = new BaseDatos();
-        $sql = "SELECT * FROM Ciudad ";
+        $sql = "SELECT * FROM ciudad ";
         if ($parametro != "") {
             $sql .= " WHERE " .$parametro;
         }
@@ -139,7 +139,7 @@ class Ciudad {
                 
                 while ($row = $base->Registro()){
                     $obj = new Ciudad();
-                    $obj->setear($row['id'], $row['coordenada'], $row['Nombre'], $row['fechaNac'], $row['Telefono'], $row['Domicilio']);
+                    $obj->setear($row['ciu_id'], $row['ciu_coordenada'], $row['ciu_ombre']);
                     array_push($arreglo, $obj);
                 }
             }

@@ -144,17 +144,18 @@ INSERT INTO `persona` (`NroDni`, `Apellido`, `Nombre`, `fechaNac`, `Telefono`, `
 
 CREATE TABLE ciudad (
   ciu_id int(3) NOT NULL PRIMARY KEY,
-  ciu_nombre varchar(30),
-  ciu_coordenada varchar(30)
+  ciu_nombre varchar(30) NOT NULL,
+  ciu_latitud varchar(30)
+  ciu_longitud varchar(30),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- 
 -- Volcar la base de datos para la tabla `persona`
 -- 
 INSERT INTO ciudad (ciu_id, ciu_nombre, ciu_coordenadas) VALUES
-(1, Centenario, ''),
-(2, Neuquen, ''),
-(3, Cipolletti, ''),
-(4, Plottier, '');
+(1, Centenario, '', ''),
+(2, Neuquen, '', ''),
+(3, Cipolletti, '', ''),
+(4, Plottier, '', '');
 -- -----------------------------------------------------------------
 
 CREATE TABLE comercio (
