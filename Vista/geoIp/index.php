@@ -15,7 +15,16 @@ include_once '../Estructura/header.php';
             <input type="text" id="ip" name="ip" class="form-control"><br><br>  
             <div class="valid-feedback d-none" id="correcto">¡Correcto!</div>  
             <div class= "invalid-feedback d-none" id="incorrecto">Ingrese una IP correcta.</div>
-            
+            <div>
+                <label for="ejmplo">Ejemplos de direcciones IP por ciudad  </label>
+                <select name="ejemplo" id="ejemplo">
+                    <option value="">Neuquén: 190.93.194.0</option>
+                    <option value="">Centenario: 200.59.235.0</option>
+                    <option value="">Cipolletti: 186.127.32.0</option>
+                    <option value="">Plotier: </option>
+                </select>
+            </div>    
+            <br>
             <input type="submit" value="Ver Mapa">
         </div>
     </form>
