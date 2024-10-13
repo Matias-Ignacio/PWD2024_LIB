@@ -33,8 +33,8 @@ include_once("accion.php");
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Acciones</th>
+                <th class="text-white" scope="col">Nombre</th>
+                <th class="text-white" scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>

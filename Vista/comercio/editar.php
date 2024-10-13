@@ -48,8 +48,6 @@ $listaCiudad = $objCE->buscar(null);
                         endforeach;
                         ?>
                     </select>
-
-
                 </div>
             </div>
         </div>

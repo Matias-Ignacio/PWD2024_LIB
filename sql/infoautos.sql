@@ -151,7 +151,7 @@ CREATE TABLE ciudad (
 -- 
 INSERT INTO ciudad (ciu_id, ciu_nombre) VALUES
 (1, 'Centenario'),
-(2, 'Neuquen'),
+(2, 'Neuquén'),
 (3, 'Cipolletti'),
 (4, 'Plottier');
 -- -----------------------------------------------------------------
@@ -197,3 +197,44 @@ ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_
 ALTER TABLE comercio
 ADD latitud DECIMAL(9,6),
 ADD longitud DECIMAL(9,6);
+
+
+
+-- ********   IPs   ********* 
+-- -Neuquén: 190.93.194.0
+-- -Plottier: 
+-- -Centenario: 200.59.235.0
+-- -Cipolletti: 186.127.32.0
+
+        Neuquén
+ * Latitud    *Longitud
+# -38.950675   -68.066232
+# -38.950608  -68.054821
+# -38.953278 -68.060226
+# -38.954479 -68.052762
+# 
+        Cipolletti  
+# -38.929299 -67.98658
+# -38.926761 -67.984178
+# -38.933682 -67.977142
+# -38.940091, -68.000136
+
+        Centenario
+# -38.832576 -68.122667
+# -38.834315 -68.119064
+# -38.833914 -68.136138
+# -38.828565 -68.136052
+
+INSERT INTO comercio (com_id, com_nombre, ciu_id, latitud, longitud) VALUES
+(1, 'Panaderia Rico Pan', 1,-38.832576 ,-68.122667),
+(2, 'Panaderia Nacional', 1, -38.834315, -68.119064),
+(3, 'Taller de Psstas', 1, -38.833914,-68.136138),
+(4, 'Maestro Pizero', 1, -38.828565,-68.136052),
+(5, 'Panaderia el Roco', 2, -38.950675,-68.066232),
+(6, 'Tallarines Artesanales', 2, -38.950608,-68.054821),
+(7, 'Maestro de Pizas Neuquen', 2, -38.953278,-68.060226),
+(8, 'Panaderia sin Nombre', 2, -38.954479,-68.052762),
+(9, 'Empanadas YA!', 3, -38.929299, -67.98658),
+(10, 'Locro al plato frio', 3, -38.926761, -67.984178),
+(11, 'Empanadas Salteñas Cipolletti', 3, -38.933682, -67.977142),
+(12, 'Panaderia Nacional Cipo', 3, -38.940091, -68.000136)
