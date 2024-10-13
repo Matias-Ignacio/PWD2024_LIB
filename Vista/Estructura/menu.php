@@ -30,6 +30,7 @@
               <li><a class="dropdown-item" href="../geolocalizacion/dosIps.php">Ingresa dos IPs para ver la distancia entre ellas</a></li>
               <li><a class="dropdown-item" href="../ciudad/index.php">Ciudades</a></li>
               <li><a class="dropdown-item" href="../comercio/index.php">Comercios</a></li>
+              <li><a class="dropdown-item" href="../geoIp/index.php">Buscar por cercania</a></li>
             </ul>
           </li>
         </ul>

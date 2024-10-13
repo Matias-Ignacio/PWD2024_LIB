@@ -159,30 +159,28 @@ INSERT INTO ciudad (ciu_id, ciu_nombre) VALUES
 CREATE TABLE comercio (
   com_id int(6) NOT NULL PRIMARY KEY,
   com_nombre varchar(30),
-  ciu_id int(3)
+  ciu_id int(3),
+  latitud DECIMAL(9,6),
+  longitud DECIMAL(9,6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 
 -- Volcar la base de datos para la tabla `comercio`
 -- 
 
-INSERT INTO comercio (com_id, com_nombre, ciu_id) VALUES
-(1, 'Panaderia Rico Pan', 1),
-(2, 'Panaderia Nacional', 1),
-(3, 'Taller de Psstas', 1),
-(4, 'Maestro Pizero', 1),
-(5, 'Panaderia el Roco', 2),
-(6, 'Tallarines Artesanales', 2),
-(7, 'Maestro de Pizas Neuquen', 2),
-(8, 'Panaderia sin Nombre', 2),
-(9, 'Empanadas YA!', 3),
-(10, 'Locro al plato frio', 3),
-(11, 'Empanadas Salteñas Cipolletti', 3),
-(12, 'Panaderia Nacional Cipo', 3),
-(13, 'Pastas Frescas sin limite', 4),
-(14, 'Empanadas Maestrulli', 4),
-(15, 'Pastas Finas La Nona', 4),
-(16, 'La mejor Pasta del Valle', 4);
+INSERT INTO comercio (com_id, com_nombre, ciu_id, latitud, longitud) VALUES
+(1, 'Panaderia Rico Pan', 1,-38.832576 ,-68.122667),
+(2, 'Panaderia Nacional', 1, -38.834315, -68.119064),
+(3, 'Taller de Psstas', 1, -38.833914,-68.136138),
+(4, 'Maestro Pizero', 1, -38.828565,-68.136052),
+(5, 'Panaderia el Roco', 2, -38.950675,-68.066232),
+(6, 'Tallarines Artesanales', 2, -38.950608,-68.054821),
+(7, 'Maestro de Pizas Neuquen', 2, -38.953278,-68.060226),
+(8, 'Panaderia sin Nombre', 2, -38.954479,-68.052762),
+(9, 'Empanadas YA!', 3, -38.929299, -67.98658),
+(10, 'Locro al plato frio', 3, -38.926761, -67.984178),
+(11, 'Empanadas Salteñas Cipolletti', 3, -38.933682, -67.977142),
+(12, 'Panaderia Nacional Cipo', 3, -38.940091, -68.000136)
 
 -- --------------------------------------------------------------
 
@@ -193,11 +191,6 @@ ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`DniDuenio`) REFERENCES `persona` (`Nr
 
 ALTER TABLE `comercio`
 ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_id`);
-
-ALTER TABLE comercio
-ADD latitud DECIMAL(9,6),
-ADD longitud DECIMAL(9,6);
-
 
 
 -- ********   IPs   ********* 
@@ -225,16 +218,3 @@ ADD longitud DECIMAL(9,6);
 # -38.833914 -68.136138
 # -38.828565 -68.136052
 
-INSERT INTO comercio (com_id, com_nombre, ciu_id, latitud, longitud) VALUES
-(1, 'Panaderia Rico Pan', 1,-38.832576 ,-68.122667),
-(2, 'Panaderia Nacional', 1, -38.834315, -68.119064),
-(3, 'Taller de Psstas', 1, -38.833914,-68.136138),
-(4, 'Maestro Pizero', 1, -38.828565,-68.136052),
-(5, 'Panaderia el Roco', 2, -38.950675,-68.066232),
-(6, 'Tallarines Artesanales', 2, -38.950608,-68.054821),
-(7, 'Maestro de Pizas Neuquen', 2, -38.953278,-68.060226),
-(8, 'Panaderia sin Nombre', 2, -38.954479,-68.052762),
-(9, 'Empanadas YA!', 3, -38.929299, -67.98658),
-(10, 'Locro al plato frio', 3, -38.926761, -67.984178),
-(11, 'Empanadas Salteñas Cipolletti', 3, -38.933682, -67.977142),
-(12, 'Panaderia Nacional Cipo', 3, -38.940091, -68.000136)
