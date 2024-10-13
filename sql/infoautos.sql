@@ -193,3 +193,7 @@ ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`DniDuenio`) REFERENCES `persona` (`Nr
 
 ALTER TABLE `comercio`
 ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_id`);
+
+ALTER TABLE comercio
+ADD latitud DECIMAL(9,6),
+ADD longitud DECIMAL(9,6);

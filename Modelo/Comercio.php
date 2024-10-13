@@ -3,6 +3,8 @@ class Comercio {
     private $id;
     private $nombre;
     private $objCiudad;
+    private $latitud;
+    private $longitud;
     private $mensajeoperacion;
 
 
@@ -10,13 +12,17 @@ class Comercio {
         $this->id = "";
         $this->nombre = "";
         $this->objCiudad = new Ciudad();
+        $this->latitud = "";
+        $this->longitud = "";
         $this->mensajeoperacion = "";
     }
 
-    public function setear($id, $nombre, $objCiudad)    {
+    public function setear($id, $nombre, $objCiudad, $latitud, $longitud)    {
         $this->setid($id);
         $this->setnombre($nombre);
         $this->setobjCiudad($objCiudad);
+        $this->setLatitud($latitud);
+        $this->setLongitud($longitud);
     }
 
     public function getid(){
@@ -42,6 +48,22 @@ class Comercio {
         $this->objCiudad = $obj; 
     }
 
+    public function getLatitud(){
+        return $this->latitud;  
+    }
+
+    public function setLatitud($valor){
+        $this->latitud = $valor; 
+    }
+
+    public function getLongitud(){
+        return $this->longitud;  
+    }
+
+    public function setLongitud($valor){
+        $this->longitud = $valor; 
+    }
+
     public function getmensajeoperacion(){
         return $this->mensajeoperacion;
     }
@@ -63,7 +85,7 @@ class Comercio {
                     $row = $base->Registro();
                     $objCiudad->setid( $row['ciu_id']);
                     $objCiudad->buscar($row['ciu_id']);
-                    $this->setear($row['com_id'], $row['com_nombre'],  $objCiudad); 
+                    $this->setear($row['com_id'], $row['com_nombre'], $objCiudad, $row['latitud'],$row['longitud']); 
                 }
             }
         }else{
@@ -79,7 +101,9 @@ class Comercio {
         $sql = "INSERT INTO comercio (com_id, com_nombre, ciu_id)  VALUES ('"
         .$this->getid()."', '"
         .$this->getNombre()."', '"
-        .$this->getobjCiudad()->getid()."');";
+        .$this->getobjCiudad()->getid()."','"
+        .$this->getLatitud()."','"
+        .$this->getLongitud()."');";
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
                 $resp = true;
@@ -98,7 +122,9 @@ class Comercio {
         $base = new BaseDatos();
         $sql = "UPDATE comercio SET 
         com_nombre = '".$this->getNombre()."', 
-        ciu_id = '".$this->getobjCiudad()->getid()."' WHERE com_id = '".$this->getid()."'";
+        ciu_id = '".$this->getobjCiudad()->getid()."',
+        latitud = '".$this->getLatitud()."',
+        Longitud = '".$this->getLongitud()."' WHERE com_id = '".$this->getid()."'";
         if ($base->Iniciar()) {
             if($base->Ejecutar($sql)){
                 $resp = true;
@@ -145,7 +171,7 @@ class Comercio {
                     $objCiudad = new Ciudad();
                     $objCiudad->setid( $row['ciu_id']);
                     $objCiudad->buscar($row['ciu_id']);
-                    $obj->setear($row['com_id'], $row['com_nombre'],  $objCiudad);
+                    $obj->setear($row['com_id'], $row['com_nombre'], $objCiudad, $row['latitud'], $row['longitud']);
                     array_push($arreglo, $obj);
                 }
             }

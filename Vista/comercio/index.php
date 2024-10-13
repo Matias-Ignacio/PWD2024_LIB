@@ -13,15 +13,15 @@ include_once("accion.php");
 <!-- Cuadro sombreado que rodea todo -->
 <div class="container_auto mt-3 mt-5 p-4 border rounded shadow text-light">
 
-  <!-- Subtitulo en la pagina -->
-  <div class="text-center mb-4">
+<!-- Subtitulo en la pagina -->
+<div class="text-center mb-4">
     <h2>Listado de Comercios</h2>
-  </div>
+</div>
 
     <div class="row float-left">
         <div class="col-md-12 float-left">
         <?php 
-        if(isset($datos) && isset($datos['msg']) && $datos['msg']!=null) {
+        if(isset($datos) && isset($datos['msg']) && $datos['msg']!=null){
             echo $datos['msg'];
         }
             
@@ -34,19 +34,23 @@ include_once("accion.php");
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Ciudad</th>
-                <th scope="col">Acciones</th>
+                <th class="text-white" scope="col">Nombre</th>
+                <th class="text-white" scope="col">Ciudad</th>
+                <th class="text-white" scope="col">Latitud</th>
+                <th class="text-white" scope="col">Longitud</th>
+                <th class="text-white" scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
 
     <?php
     if(count($lista)>0){
-        foreach ($lista as $comercio) {
+        foreach ($lista as $comercio){
             echo '<tr><td>'.$comercio->getid().'</td>';
             echo '<td>'.$comercio->getNombre().'</td>';
             echo '<td>'.$comercio->getobjCiudad()->getNombre().'</td>';
+            echo '<td>'.$comercio->getLatitud().'</td>';
+            echo '<td>'.$comercio->getLongitud().'</td>';
             echo '<td><a class="btn btn-info" role="button" href="editar.php?accion=editar&com_id='.$comercio->getid().'">editar</a>';
             echo '<a class="btn btn-primary" role="button" href="editar.php?accion=borrar&com_id='.$comercio->getid().'">borrar</a></td></tr>';
         }

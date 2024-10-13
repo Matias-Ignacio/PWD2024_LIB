@@ -41,7 +41,7 @@ class AbmComercio{
             $objCiudad = new Ciudad();
             $objCiudad->setid( $param['ciu_id']);
             $objCiudad->buscar($param['ciu_id']);
-            $objComercio->setear($param['com_id'], $param['com_nombre'],  $objCiudad);
+            $objComercio->setear($param['com_id'], $param['com_nombre'],  $objCiudad, $param['latitud'], $param['longitud'] );
         }
         return $objComercio;
     }
@@ -58,7 +58,7 @@ class AbmComercio{
         if( isset($param['com_id']) )
         {
             $objComercio = new Comercio();
-            $objComercio->setear($param['com_id'], null, null);
+            $objComercio->setear($param['com_id'], null, null, null, null);
         }
         return $objComercio;
     }
