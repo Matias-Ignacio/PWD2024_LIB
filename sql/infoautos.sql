@@ -142,6 +142,10 @@ INSERT INTO `persona` (`NroDni`, `Apellido`, `Nombre`, `fechaNac`, `Telefono`, `
 ('32965874', 'Campos', 'Ricardo', '1981-07-09', '299-9587458', 'Jujuy 13'),
 ('30874563', 'Salas', 'Gabriela', '1994-02-24', '299-9685747', 'Entre Rios 121');
 
+
+
+
+
 CREATE TABLE ciudad (
   ciu_id int(3) NOT NULL PRIMARY KEY,
   ciu_nombre varchar(30) NOT NULL
@@ -153,12 +157,15 @@ INSERT INTO ciudad (ciu_id, ciu_nombre) VALUES
 (1, 'Centenario'),
 (2, 'Neuquén'),
 (3, 'Cipolletti'),
-(4, 'Plottier');
+(4, 'Buenos Aires'),
+(5, 'Quito'),
+(6, 'Barcelona');
+
 -- -----------------------------------------------------------------
 
 CREATE TABLE comercio (
   com_id int(6) NOT NULL PRIMARY KEY,
-  com_nombre varchar(30),
+  com_nombre varchar(50),
   ciu_id int(3),
   latitud DECIMAL(9,6),
   longitud DECIMAL(9,6)
@@ -169,18 +176,25 @@ CREATE TABLE comercio (
 -- 
 
 INSERT INTO comercio (com_id, com_nombre, ciu_id, latitud, longitud) VALUES
-(1, 'Panaderia Rico Pan', 1,-38.832576 ,-68.122667),
-(2, 'Panaderia Nacional', 1, -38.834315, -68.119064),
-(3, 'Taller de Psstas', 1, -38.833914,-68.136138),
-(4, 'Maestro Pizero', 1, -38.828565,-68.136052),
-(5, 'Panaderia el Roco', 2, -38.950675,-68.066232),
-(6, 'Tallarines Artesanales', 2, -38.950608,-68.054821),
-(7, 'Maestro de Pizas Neuquen', 2, -38.953278,-68.060226),
-(8, 'Panaderia sin Nombre', 2, -38.954479,-68.052762),
-(9, 'Empanadas YA!', 3, -38.929299, -67.98658),
-(10, 'Locro al plato frio', 3, -38.926761, -67.984178),
-(11, 'Empanadas Salteñas Cipolletti', 3, -38.933682, -67.977142),
-(12, 'Panaderia Nacional Cipo', 3, -38.940091, -68.000136)
+(1, 'Global Hotel - Centenario', 1, -38.83530991864403 , -68.12932800169308),
+(2, 'Tienda SAN - Centenario', 1, -38.819619714563906, -68.15659262952876),
+(3, 'Salón Gala, eventos - Centenario', 1, -38.80001452323895, -68.15293621702092),
+(4, 'Veterinaria Centenario - Centenario', 1, -38.8290239760046, -68.12160331688584),
+(5, 'Hipermercado Coto - Neuquén', 2,-38.941010855066025 , -68.06357100644108),
+(6, '4 ases calzados - Neuquén', 2, -38.95741294704285, -68.05490235280381),
+(7, 'Distribuidora Lo de Mario - Neuquén', 2, -38.947118595470464, -68.09615119522235),
+(8, 'OHANA! Salón Infantil - Neuquén', 2, -38.9768656428971, -68.08075047081363),
+(9, 'Maderera los hermanos - Cipolletti', 3, -38.91020975908137, -67.96908561282132),
+(10, 'Ferretería Titi - Cipolletti', 3, -38.9113357027319, -67.9768742346786),
+(11, 'Las acacias club house - Cipolletti', 3, -38.95134523019734, -67.97649041198875),
+(12, 'ChangoMás - Cipolletti', 3, -38.931120530304206, -67.9817742670694),
+(13, 'Hotel 6 de octubre  - Buenos Aires', 4, -34.61883696481868, -58.40589465813481),
+(14, 'Feria El Mangrullo  - Buenos Aires', 4, -38.97947139353447, -68.35556033204661),
+(15, 'Estadio Alberto José Armando - Buenos Aires', 4, -34.635372875993674, -58.36419920183187),
+(16, 'Gymnastik  - Buenos Aires', 4, -38.93955372526156, -68.23608690281925),
+(17, 'Mercado artesanal La Mariscal  - Quito', 5, -0.2064883929249806, -78.49361413699764),
+(18, 'Basílica de la Sagrada Familia  - Barcelona', 6, 41.403174564964374, 2.174885156330168);
+
 
 -- --------------------------------------------------------------
 
@@ -194,27 +208,49 @@ ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_
 
 
 -- ********   IPs   ********* 
--- -Neuquén: 190.93.194.0
--- -Plottier: 
 -- -Centenario: 200.59.235.0
+-- -Neuquén: 190.93.194.0
 -- -Cipolletti: 186.127.32.0
+-- -Buenos Aires: 190.173.137.223
+-- -Barcelona - España: 84.88.0.19
+-- -Quito - Ecuador: 181.211.96.101
 
-        Neuquén
- * Latitud    *Longitud
-# -38.950675   -68.066232
-# -38.950608  -68.054821
-# -38.953278 -68.060226
-# -38.954479 -68.052762
-# 
-        Cipolletti  
-# -38.929299 -67.98658
-# -38.926761 -67.984178
-# -38.933682 -67.977142
-# -38.940091, -68.000136
+                Centenario
+      * Latitud             *Longitud
+# -38.83530991864403 , -68.12932800169308
+# -38.819619714563906, -68.15659262952876
+# -38.80001452323895, -68.15293621702092
+# -38.8290239760046, -68.12160331688584
 
-        Centenario
-# -38.832576 -68.122667
-# -38.834315 -68.119064
-# -38.833914 -68.136138
-# -38.828565 -68.136052
+                Neuquén
+      * Latitud             *Longitud
+# -38.941010855066025 , -68.06357100644108
+# -38.95741294704285, -68.05490235280381
+# -38.947118595470464, -68.09615119522235
+# -38.9768656428971, -68.08075047081363
 
+                Cipolletti
+      * Latitud             *Longitud
+# -38.91020975908137, -67.96908561282132
+# -38.9113357027319, -67.9768742346786
+# -38.95134523019734, -67.97649041198875
+# -38.931120530304206', '-67.9817742670694
+
+                Plottier
+      * Latitud             *Longitud
+# -38.94769097038003, -68.29395839333125
+# -38.97947139353447, -68.35556033204661
+# -38.96440119121544, -68.23077161381407
+# -38.93955372526156, -68.23608690281925
+
+                Buenos Aires
+      * Latitud             *Longitud
+# -34.61883696481868, -58.40589465813481
+
+                Quito
+      * Latitud             *Longitud
+# 41.403174564964374, 2.174885156330168
+
+                Barcelona
+      * Latitud             *Longitud
+# 41.403174564964374, 2.174885156330168

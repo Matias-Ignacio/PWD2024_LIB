@@ -53,7 +53,14 @@ $graph = new Graph(900, 400); //Cambiar a PieGraph para gráfico circular
 //Escala del gráfico
 $graph->SetScale("textlin");
 
+//Titulo del grafico
 $graph->title->Set('Cantidad de Personas por Marca de Auto');
+
+//Formato del titulo del grafico
+$graph->title->SetFont(FF_VERDANA, FS_BOLD, 14);  //Fuente Verdana, negrita, tamaño 14
+$graph->title->SetColor('#1E90FF');  //Color azul (hexadecimal)
+$graph->title->SetAlign('center');   //Alineación al centro
+$graph->title->SetMargin(15);        //Margen entre el título y el gráfico
 
 //Crear el gráfico de barras
 $barplot = new BarPlot($valores);

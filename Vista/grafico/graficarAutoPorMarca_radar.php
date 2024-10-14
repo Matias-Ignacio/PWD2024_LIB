@@ -23,7 +23,16 @@ if ($datosAutos !== false) {
     // Crear el gráfico de radar
     $graph = new RadarGraph(900, 600); // Cambiar a RadarGraph para gráfico de radar
     $graph->SetShadow();
+
+    //Titulo del grafico
     $graph->title->Set('Cantidad de Autos por Marca');
+
+    //Formato del titulo del grafico
+    $graph->title->SetFont(FF_VERDANA, FS_BOLD, 14);  //Fuente Verdana, negrita, tamaño 14
+    $graph->title->SetColor('#1E90FF');  //Color azul (hexadecimal)
+    $graph->title->SetAlign('center');   //Alineación al centro
+    $graph->title->SetMargin(15);        //Margen entre el título y el gráfico
+
 
     // Crear un gráfico radar para las cantidades
     $plot = new RadarPlot($cantidades);

@@ -36,7 +36,14 @@ $valores = array($personasConAuto, $personaSinAuto);
 $graph = new PieGraph(900, 350); // Cambiar a PieGraph para gráfico circular
 $graph->SetShadow();
 
+//Titulo del grafico
 $graph->title->Set('Personas con y sin Auto');
+
+//Formato del titulo del grafico
+$graph->title->SetFont(FF_VERDANA, FS_BOLD, 14);  //Fuente Verdana, negrita, tamaño 14
+$graph->title->SetColor('#1E90FF');  //Color azul (hexadecimal)
+$graph->title->SetAlign('center');   //Alineación al centro
+$graph->title->SetMargin(15);        //Margen entre el título y el gráfico
 
 //Crear el gráfico de torta
 $p1 = new PiePlot($valores);
