@@ -34,8 +34,8 @@ $longitud = $record->location->longitude;
 <table class="table table-hover " style="background-color: #ffffff;">
     <thead>
         <tr class = 'mb-4'>
-            <th>País</th>
-            <th>Cdigo Postal</th>
+            <th>Pa&iacute;s</th>
+            <th>C&oacute;digo Postal</th>
             <th>Ciudad</th>
             <th>Latitud</th>
             <th>Longitud</th>

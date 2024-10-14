@@ -56,8 +56,8 @@ $distancia = calcularDistancia($lat1, $lon1, $lat2, $lon2);
 <table  class="table table-bordered text-center" style="background-color: #ffffff;">
     <thead>
         <tr >
-            <th>País</th>
-            <th>Cdigo Postal</th>
+            <th>Pa&iacute;s</th>
+            <th>C&oacute;digo Postal</th>
             <th>Ciudad</th>
             <th>Latitud</th>
             <th>Longitud</th>
@@ -78,7 +78,7 @@ $distancia = calcularDistancia($lat1, $lon1, $lat2, $lon2);
         ?>
         <tr>
             <td colspan="4">
-                La distancia entre las dos ubicaciones es de <strong><?php echo round($distancia, 2); ?> kilómetros</strong>
+                La distancia entre las dos ubicaciones es de <strong><?php echo round($distancia, 2); ?> kil&oacute;metros</strong>
             </td>
         </tr>
     </tbody>
