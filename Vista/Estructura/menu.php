@@ -20,6 +20,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gr&aacute;ficos</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="../grafico/01_verGraficoAuto.php">Gr&aacute;ficos </a></li>
+              <li><a class="dropdown-item" href="../grafico/guia.php">Gu&iacute;a </a></li>
             </ul>
           </li>
           <!-- Geolocalizacion -->
