@@ -212,8 +212,8 @@ ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_
 -- -Neuquén: 190.93.194.0
 -- -Cipolletti: 186.127.32.0
 -- -Buenos Aires: 190.173.137.223
--- -Barcelona - España: 84.88.0.19
--- -Quito - Ecuador: 181.211.96.101
+-- -Barcelona: 84.88.0.19
+-- -Quito: 181.211.96.101
 
                 Centenario
       * Latitud             *Longitud
@@ -234,14 +234,7 @@ ADD CONSTRAINT `ciudad_ibfk_1` FOREIGN KEY (`ciu_id`) REFERENCES `ciudad` (`ciu_
 # -38.91020975908137, -67.96908561282132
 # -38.9113357027319, -67.9768742346786
 # -38.95134523019734, -67.97649041198875
-# -38.931120530304206', '-67.9817742670694
-
-                Plottier
-      * Latitud             *Longitud
-# -38.94769097038003, -68.29395839333125
-# -38.97947139353447, -68.35556033204661
-# -38.96440119121544, -68.23077161381407
-# -38.93955372526156, -68.23608690281925
+# -38.931120530304206, -67.9817742670694
 
                 Buenos Aires
       * Latitud             *Longitud
