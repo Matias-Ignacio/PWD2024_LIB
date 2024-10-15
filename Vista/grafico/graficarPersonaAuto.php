@@ -33,7 +33,7 @@ $labels = array('Personas con Auto', 'Personas sin Auto');
 $valores = array($personasConAuto, $personaSinAuto);
 
 // Configurar el gráfico
-$graph = new PieGraph(900, 350); // Cambiar a PieGraph para gráfico circular
+$graph = new PieGraph(900, 600); // Cambiar a PieGraph para gráfico circular
 $graph->SetShadow();
 
 //Titulo del grafico

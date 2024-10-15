@@ -48,7 +48,7 @@ $labels = array_keys($cantidadPersonasPorMarca); //Las marcas
 $valores = array_values($cantidadPersonasPorMarca); //Las cantidades de personas que tienen autos de esas marcas
 
 //Configurar el gráfico (gráfico de torta o puedes cambiar a barras si prefieres)
-$graph = new Graph(900, 400); //Cambiar a PieGraph para gráfico circular
+$graph = new Graph(900, 600); //Cambiar a PieGraph para gráfico circular
 
 //Escala del gráfico
 $graph->SetScale("textlin");

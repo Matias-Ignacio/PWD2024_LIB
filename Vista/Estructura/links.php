@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="../css/estilos.css">
   <!-- LINK JS -->
   <script src="../Js/funciones.js"></script>
+  <script src="../Js/carousel.js"></script>
 
 
   

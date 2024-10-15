@@ -19,7 +19,7 @@ $data = array_values($nuevoArreglo);
 $marca = array_keys($nuevoArreglo);
 
 //Crear gráfico de torta en 3D
-$graph = new PieGraph(650,600);
+$graph = new PieGraph(900,600);
 
 //Tema del gráfico
 $theme_class = new VividTheme;

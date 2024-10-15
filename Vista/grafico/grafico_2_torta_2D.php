@@ -7,7 +7,7 @@ require_once ('../Librerias/jpGraph/jpgraph_pie.php');
 $data = array(40,21,17,14,23);
 
 // Create the Pie Graph. 
-$graph = new PieGraph(350,250);
+$graph = new PieGraph(900, 600);
 
 $theme_class = "DefaultTheme";
 //$graph->SetTheme(new $theme_class());

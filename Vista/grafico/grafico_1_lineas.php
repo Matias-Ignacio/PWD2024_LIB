@@ -8,7 +8,7 @@ $datay2 = array(12,9,12,8,41,15,30,8,48,36,14,25);
 $datay3 = array(5,17,32,24,4,2,36,2,9,24,21,23);
 
 // Setup the graph
-$graph = new Graph(900,350);
+$graph = new Graph(900,600);
 $graph->SetScale("textlin"); //Indica  que el eje X es tipo texto y el eje Y es lineal. 
 
 $theme_class = new UniversalTheme;

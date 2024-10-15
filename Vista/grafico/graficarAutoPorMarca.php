@@ -20,7 +20,7 @@ if ($datosAutos !== false) {
     }
     
     // Configurar el gráfico
-    $graph = new PieGraph(900, 350); // Cambiar a PieGraph para gráfico circular
+    $graph = new PieGraph(900, 600); // Cambiar a PieGraph para gráfico circular
     $graph->SetShadow();
 
     //Titulo del grafico
