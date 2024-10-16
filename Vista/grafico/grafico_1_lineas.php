@@ -49,7 +49,7 @@ $p3->SetLegend('Tienda 3');
 
 $graph->legend->SetFrameWeight(1); // Establece un marco alrededor de la leyenda con una grosor de 1 pixal.
 
-$graph->legend->SetPos(0.5,0.98,'center','bottom'); // coloca la leyenda en el centro en la parte inferior del grafico
+$graph->legend->SetPos(0.5, 0.98, 'center', 'bottom'); // coloca la leyenda en el centro en la parte inferior del grafico
 
 // Output line
 $graph->Stroke();
