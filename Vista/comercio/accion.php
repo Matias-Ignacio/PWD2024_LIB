@@ -1,5 +1,5 @@
 <?php
-$titulo = " Gestion de Comercios";
+$titulo = "TP Clases Útiles - Gestión de Comercios";
 include_once("../Estructura/header.php");
 $resp = false;
 $objTrans = new AbmComercio();

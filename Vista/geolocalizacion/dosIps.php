@@ -1,6 +1,6 @@
 
 <?php
-$titulo = "TP 5 - Muestra distancia";
+$titulo = "TP Clases Útiles - Mostrar distancia";
 include_once '../Estructura/header.php';
 ?>
 <div class="divtitulo">

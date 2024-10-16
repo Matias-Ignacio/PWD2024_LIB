@@ -105,7 +105,7 @@ body {
 /***********************************************************************************/
 
 /* Color de botón y texto */
-.btn-tp1, .btn-tp2, .btn-tp3 {
+.btn-tp1, .btn-tp2, .btn-tp3, .btn-tpcu {
     color: white;
     border-color: white;
     border: 1px solid;
@@ -121,7 +121,7 @@ body {
 }
 
 /* Color de botón, texto y puntero al pasar el mouse */
-.btn-tp1:hover, .btn-tp2:hover, .btn-tp3:hover {
+.btn-tp1:hover, .btn-tp2:hover, .btn-tp3:hover, .btn-tpcu:hover {
     cursor: pointer;
     background-color: white;
     color: black;
@@ -143,8 +143,8 @@ body {
 
 
 
-/* Color de fondo del container_cine */
-.container_cine {
+/* Color de fondo del container_cine y container_editar */
+.container_cine, .container_editar {
     color: white;
     font-weight: bold;
     margin-top: 5px;
@@ -156,7 +156,7 @@ body {
     border-radius: 15px;
 }
 
-/* Color de fondo del container_cine */
+/* Color de fondo del container_auto y container_persona */
 .container_auto, .container_persona {
     color: white;
     font-weight: bold;

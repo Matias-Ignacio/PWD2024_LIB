@@ -1,5 +1,5 @@
 <?php
-    $titulo = "Gestión de Ciudades";
+    $titulo = "TP Clases Útiles - Gestión de Ciudades";
     include_once("../Estructura/header.php");
     $datos = data_submitted();
     $datos['accion'] = "listar";
@@ -14,9 +14,10 @@
 <!-- Cuadro sombreado que rodea todo -->
 <div class="container_auto mt-3 mt-5 p-4 border rounded shadow text-light">
 
-    <!-- Subtitulo en la pagina -->
+    <!-- Titulo de la tabla -->
     <div class="text-center mb-4">
         <h2>Listado de Ciudades</h2>
+        <p>Listado de las ciudades incluidas en la base de datos</p>
     </div>
 
     <div class="row float-left">

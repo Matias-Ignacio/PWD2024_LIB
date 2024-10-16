@@ -1,6 +1,6 @@
 
 <?php
-$titulo = "TP 5 - Enviar Geolocalización ";
+$titulo = "TP Clases Útiles - Enviar Geolocalización ";
 include_once '../Estructura/header.php';
 ?>
 

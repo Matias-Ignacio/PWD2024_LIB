@@ -1,5 +1,5 @@
 <?php
-$titulo = " Ciudad ";
+$titulo = "TP Clases Útiles - Gestión de Ciudades";
 include_once("../Estructura/header.php");
 $resp = false;
 $objTrans = new AbmCiudad();
