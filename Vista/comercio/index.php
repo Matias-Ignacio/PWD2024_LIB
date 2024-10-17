@@ -70,7 +70,7 @@ include_once("accion.php");
     <!-- Boton agregar nuevo Comercio -->
     <div class="row float-right">
         <div class="col-md-12 float-right">
-            <a class="btn btn-primary" role="button" href="editar.php?accion=nuevo">Nuevo</a>
+            <a class="btn btn-primary" role="button" href="auto_nuevo.php" >Nuevo</a>
         </div>
     </div>
 </div>
