@@ -37,6 +37,7 @@
             </tr>
             <tr>
                 <td><a href="https://maxmind.github.io/GeoIP2-php/">Manual GeoIp2</a></td>
+                <td><a href="https://leafletjs.com/">Manual Leaflet</a></td>
             </tr>
         </table>
     </div>
