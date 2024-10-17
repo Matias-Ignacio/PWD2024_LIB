@@ -147,7 +147,7 @@ INSERT INTO `persona` (`NroDni`, `Apellido`, `Nombre`, `fechaNac`, `Telefono`, `
 
 
 CREATE TABLE ciudad (
-  ciu_id int(3) NOT NULL PRIMARY KEY,
+  ciu_id int(3) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   ciu_nombre varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- 
@@ -164,7 +164,7 @@ INSERT INTO ciudad (ciu_id, ciu_nombre) VALUES
 -- -----------------------------------------------------------------
 
 CREATE TABLE comercio (
-  com_id int(6) NOT NULL PRIMARY KEY,
+  com_id int(6) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   com_nombre varchar(50),
   ciu_id int(3),
   latitud DECIMAL(9,6),

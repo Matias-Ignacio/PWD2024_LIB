@@ -45,10 +45,7 @@
         <th>Marca</th>
         <th>Modelo</th>
         <th>DNI Propietario</th>
-        <th class="text-center">Editar</th>
-        <th class="text-center">Eliminar</th>
-        <th class="text-center">Cambio de due&ntilde;o</th>
-        <th class="text-center">Ver due&ntilde;o</th>
+        <th class="text-center">Acciones</th>
       </tr>
     </thead>
 
@@ -62,10 +59,10 @@
                 echo '<td>'.$objAuto->getMarca().'</td>';
                 echo '<td>'.$objAuto->getModelo().'</td>';
                 echo '<td>'.$objAuto->getObjDuenio()->getNroDni().'</td>';
-                echo '<td class="text-center"><a href="auto_editar.php?Patente='.$objAuto->getPatente().'" class="btn btn-color btn-sm" role="button">Editar</a></td>';
-                echo '<td class="text-center"><a href="auto_accion.php?accion=borrar&Patente='.$objAuto->getPatente().'" class="btn btn-outline-danger btn-sm" role="button">Borrar</a></td>'; 
-                echo '<td class="text-center"><a href="auto_cambio_duenio.php?Patente='.$objAuto->getPatente().'" class="btn btn-outline-success btn-sm" role="button">Cambio</a></td>'; 
-                echo '<td class="text-center"><a href="autos_persona.php?NroDni='.$objAuto->getObjDuenio()->getNroDni().'" class="btn btn-outline-dark btn-sm" role="button">Ver Dueño</a></td></tr>';
+                echo '<td class="text-center"><a href="auto_editar.php?Patente='.$objAuto->getPatente().'" class="btn btn-color btn-sm" role="button"><i class="bi bi-pencil"></i></a>  ';
+                echo '<a href="auto_accion.php?accion=borrar&Patente='.$objAuto->getPatente().'" class="btn btn-outline-danger btn-sm" role="button"><i class="bi bi-trash3-fill"></i></a>  '; 
+                echo '<a href="auto_cambio_duenio.php?Patente='.$objAuto->getPatente().'" class="btn btn-outline-success btn-sm" role="button">Cambio</a>  '; 
+                echo '<a href="autos_persona.php?NroDni='.$objAuto->getObjDuenio()->getNroDni().'" class="btn btn-outline-dark btn-sm" role="button">Ver Dueño</a></td></tr>';
               }
         }
       ?>

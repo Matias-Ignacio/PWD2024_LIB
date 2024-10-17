@@ -39,8 +39,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th class="text-white" scope="col">Nombre</th>
-                    <th class="text-white" scope="col">Editar</th>
-                    <th class="text-white" scope="col">Eliminar</th>
+                    <th class="text-white" scope="col"></th>
                 </tr>
             </thead>
 
@@ -54,8 +53,8 @@
                         echo '<tr><td>'.$ciudad['ciu_id'].'</td>';
                         echo '<td>'.$ciudad['ciu_nombre'].'</td>';
 
-                        echo '<td><a class="btn btn-color" role="button" href="editar.php?accion=editar&ciu_id='.$ciudad['ciu_id'].'">editar</a></td>';
-                        echo '<td><a class="btn btn-outline-danger" role="button" href="editar.php?accion=borrar&ciu_id='.$ciudad['ciu_id'].'">borrar</a></td></tr>';
+                        echo '<td><a class="btn btn-color" role="button" href="editar.php?accion=editar&ciu_id='.$ciudad['ciu_id'].'"><i class="bi bi-pencil"></i></a>   ';
+                        echo '<a class="btn btn-outline-danger" role="button" href="editar.php?accion=borrar&ciu_id='.$ciudad['ciu_id'].'"><i class="bi bi-trash3-fill"></i></a></td></tr>';
                     }
                 }
                 ?>

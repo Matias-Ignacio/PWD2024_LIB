@@ -48,9 +48,7 @@
         <th>Fecha Nacimiento</th>
         <th>Teléfono</th>
         <th>Domicilio</th>
-        <th class="text-center">Editar</th>
-        <th class="text-center">Eliminar</th>
-        <th class="text-center">Ver los autos de la persona</th>
+        <th class="text-center">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -64,9 +62,9 @@
                 echo '<td>'.$objPersona->getFechaNac().'</td>';
                 echo '<td>'.$objPersona->getTelefono().'</td>';
                 echo '<td>'.$objPersona->getDomicilio().'</td>';
-                echo '<td class="text-center"><a href="persona_editar.php?NroDni='.$objPersona->getNroDni().'" class="btn btn-color btn-sm" role="button">Editar</a></td>';
-                echo '<td class="text-center"><a href="persona_accion.php?accion=borrar&NroDni='.$objPersona->getNroDni().'" class="btn btn-outline-danger btn-sm" role="button">Borrar</a></td>';
-                echo '<td class="text-center"><a href="../auto/autos_persona.php?NroDni='.$objPersona->getNroDni().'" class="btn btn-outline-dark btn-sm" role="button">Ver Autos</a></td></tr>';
+                echo '<td class="text-center"><a href="persona_editar.php?NroDni='.$objPersona->getNroDni().'" class="btn btn-color btn-sm" role="button"><i class="bi bi-pencil"></i></a>  ';
+                echo '<a href="persona_accion.php?accion=borrar&NroDni='.$objPersona->getNroDni().'" class="btn btn-outline-danger btn-sm" role="button"><i class="bi bi-trash3-fill"></i></a>   ';
+                echo '<a href="../auto/autos_persona.php?NroDni='.$objPersona->getNroDni().'" class="btn btn-outline-dark btn-sm" role="button"><i class="bi bi-car-front"></i></a></td></tr>';
               }
         }
     ?>

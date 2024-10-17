@@ -1,5 +1,5 @@
 <?php 
-class Ciudad {
+class Ciudad extends BaseDatos {
     private $ciu_id;
     private $ciu_nombre;
 
@@ -7,6 +7,7 @@ class Ciudad {
 
 
     public function __construct(){
+        parent::__construct();
         $this->ciu_id="";
         $this->ciu_nombre = "";
         $this->mensajeoperacion ="";
@@ -63,77 +64,75 @@ class Ciudad {
     
     public function insertar(){
         $resp = false;
-        $base  =  new BaseDatos();
-        $sql  =  "INSERT INTO ciudad(ciu_id, ciu_nombre)  VALUES("
-        .$this->getid().", '"
-        .$this->getNombre()."'";
-        if ($base->Iniciar()) {
-            if($base->Ejecutar($sql)){
+        $sql  =  "INSERT INTO ciudad(ciu_nombre)  VALUES('".$this->getNombre()."');";
+        if ($this->Iniciar()) {
+            if($id = $this->Ejecutar($sql)){
+                $this->setId($id);
                 $resp = true;
             }else{
-                $this->setmensajeoperacion("Ciudad->insertar: ".$base->getError());
+                $this->setmensajeoperacion("Ciudad->insertar: ".$this->getError());
             }
         }else{
-            $this->setmensajeoperacion("Ciudada->insertar: ".$base->getError());
+            $this->setmensajeoperacion("Ciudada->insertar: ".$this->getError());
         }
         return $resp;
     }
     
     public function modificar(){
         $resp = false;
-        $base = new BaseDatos();
         $sql = "UPDATE ciudad SET 
         ciu_nombre = '".$this->getNombre()."'
         WHERE ciu_id = ".$this->getid();
-        if ($base->Iniciar()) {
-            if($base->Ejecutar($sql)){
+        if ($this->Iniciar()) {
+            if($this->Ejecutar($sql)){
                 $resp = true;
             }else{
-                $this->setmensajeoperacion("Ciudad->modificar: ".$base->getError());
+                $this->setmensajeoperacion("Ciudad->modificar: ".$this->getError());
             }
         }else{
-            $this->setmensajeoperacion("Ciudad->modificar: ".$base->getError());
+            $this->setmensajeoperacion("Ciudad->modificar: ".$this->getError());
         }
         return $resp;
     }
     
     public function eliminar(){
         $resp = false;
-        $base = new BaseDatos();
         $sql = "DELETE FROM ciudad WHERE ciu_id = '".$this->getid()."'";
-        if ($base->Iniciar()) {
-            if ($base->Ejecutar($sql)) {
+        if ($this->Iniciar()) {
+            if ($this->Ejecutar($sql)) {
                 return true;
             }else{
-                $this->setmensajeoperacion("Ciudad->eliminar: ".$base->getError());
+                $this->setmensajeoperacion("Ciudad->eliminar: ".$this->getError());
             }
         }else{
-            $this->setmensajeoperacion("Ciudad->eliminar: ".$base->getError());
+            $this->setmensajeoperacion("Ciudad->eliminar: ".$this->getError());
         }
         return $resp;
     }
     
-    public static function listar($parametro=""){
+    public function listar($parametro=""){
         $arreglo = array();
-        $base = new BaseDatos();
         $sql = "SELECT * FROM ciudad ";
         if ($parametro != "") {
             $sql .= " WHERE " .$parametro;
         }
-        $res = $base->Ejecutar($sql);
-        if($res > -1){
-            if($res > 0){
-                
-                while ($row = $base->Registro()){
-                    $obj = new Ciudad();
-                    $obj->setear($row['ciu_id'], $row['ciu_nombre']);
-                    array_push($arreglo, $obj);
+        if ($this->Iniciar()) {
+            $res = $this->Ejecutar($sql);
+            if($res > -1){
+                if($res > 0){
+                    
+                    while ($row = $this->Registro()){
+                        $obj = new Ciudad();
+                        $obj->setear($row['ciu_id'], $row['ciu_nombre']);
+                        array_push($arreglo, $obj);
+                    }
                 }
+            }else{
+                $this->setmensajeoperacion("Ciudad->listar: ".$this->getError());
             }
-        }else{
-            self::setmensajeoperacion("Ciudad->listar: ".$base->getError());
         }
         return $arreglo;
     }
 }
+
 ?>

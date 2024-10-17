@@ -35,6 +35,8 @@ class AbmComercio{
 
         if( array_key_exists('com_id',$param) and 
         array_key_exists('com_nombre',$param) and
+        array_key_exists('latitud',$param) and
+        array_key_exists('longitud',$param) and
         array_key_exists('ciu_id',$param))
         {
             $objComercio = new Comercio();
@@ -84,13 +86,14 @@ class AbmComercio{
      */
     public function alta($param){
         $resp = false;
-        if($this->validarTodoComercio($param)){
+       // if($this->validarTodoComercio($param)){
+            $param['com_id'] = null;
             $elObjComercio = $this->cargarObjeto($param);
             if ($elObjComercio != null and $elObjComercio->insertar())
             {
                 $resp = true;
             }
-        }
+        //}
         return $resp;
         
     }
@@ -121,7 +124,7 @@ class AbmComercio{
     public function modificacion($param)
     {
         $resp = false;
-        if($this->validarTodoComercio($param)){
+      //  if($this->validarTodoComercio($param)){
             if ($this->seteadosCamposClaves($param))
             {
                 $elObjComercio = $this->cargarObjeto($param);
@@ -130,7 +133,7 @@ class AbmComercio{
                     $resp = true;
                 }
             }
-        }
+       // }
         return $resp;
     }
 
@@ -153,7 +156,8 @@ class AbmComercio{
             if (isset($param['ciu_id']))
             $where .= " and ciu_id = '".$param['ciu_id']."'";    
         }
-        $arreglo = Comercio::listar($where);
+        $objComercio = new Comercio();
+        $arreglo = $objComercio->listar($where);
         return $arreglo;
     }
 

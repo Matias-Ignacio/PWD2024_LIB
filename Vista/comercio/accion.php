@@ -7,6 +7,7 @@ $objTrans = new AbmComercio();
 if(!isset($datos)) {
     $datos = data_submitted();
 } 
+//var_dump($datos);
 if (isset($datos['accion'])){
     if($datos['accion']=='listar'){
         $lista = $objTrans->buscar(null);
@@ -17,7 +18,6 @@ if (isset($datos['accion'])){
     }else {
         $mensaje = "La accion ".$datos['accion']." no pudo concretarse.";
     }
-    //echo $mensaje;
     echo("<script>location.href = './index.php?msg=$mensaje';</script>");
 }
 }

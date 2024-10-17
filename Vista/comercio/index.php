@@ -43,8 +43,7 @@ include_once("accion.php");
                     <th class="text-white" scope="col">Ciudad</th>
                     <th class="text-white" scope="col">Latitud</th>
                     <th class="text-white" scope="col">Longitud</th>
-                    <th class="text-white" scope="col">Editar</th>
-                    <th class="text-white" scope="col">Eliminar</th>
+                    <th class="text-white" scope="col"></th>
                 </tr>
             </thead>
 
@@ -58,8 +57,8 @@ include_once("accion.php");
                         echo '<td>'.$comercio->getobjCiudad()->getNombre().'</td>';
                         echo '<td>'.$comercio->getLatitud().'</td>';
                         echo '<td>'.$comercio->getLongitud().'</td>';
-                        echo '<td><a class="btn btn-color" role="button" href="editar.php?accion=editar&com_id='.$comercio->getid().'">editar</a></td>';
-                        echo '<td><a class="btn btn-outline-danger" role="button" href="editar.php?accion=borrar&com_id='.$comercio->getid().'">borrar</a></td></tr>';
+                        echo '<td><a class="btn btn-color" role="button" href="editar.php?accion=editar&com_id='.$comercio->getid().'"><i class="bi bi-pencil"></i></a>   ';
+                        echo '<a class="btn btn-outline-danger" role="button" href="editar.php?accion=borrar&com_id='.$comercio->getid().'"><i class="bi bi-trash3-fill"></i></a></td></tr>';
                     }
                 }
                 ?>
@@ -70,7 +69,7 @@ include_once("accion.php");
     <!-- Boton agregar nuevo Comercio -->
     <div class="row float-right">
         <div class="col-md-12 float-right">
-            <a class="btn btn-primary" role="button" href="auto_nuevo.php" >Nuevo</a>
+        <a class="btn btn-primary" role="button" href="editar.php?accion=nuevo&ciu_id=-1">Nuevo</a>
         </div>
     </div>
 </div>

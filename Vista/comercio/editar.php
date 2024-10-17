@@ -30,10 +30,12 @@ $listaCiudad = $objCE->buscar(null);
             <div class="col-sm-12 ">
                 <div class="form-group has-feedback">
                     <label for="nombre" class="control-label">Nombre:</label>
-                    <div class="input-group">
-                        <input style="margin-bottom: 5px;"id="com_nombre" name ="com_nombre" type="text" class="form-control" value="<?php echo ($obj !=null) ? $obj->getNombre() : ""?>" required >
-
-                    </div>
+                    <input style="margin-bottom: 5px;"id="com_nombre" name ="com_nombre" type="text" class="form-control" value="<?php echo ($obj !=null) ? $obj->getNombre() : ""?>" required ><br>
+                    <label for="nombre" class="control-label">Latitud:</label>
+                    <input style="margin-bottom: 5px;"id="latitud" name ="latitud" type="text" class="form-control" value="<?php echo ($obj !=null) ? $obj->getLatitud() : ""?>" required >
+                    <label for="nombre" class="control-label">Longitud:</label>
+                    <input style="margin-bottom: 5px;"id="longitud" name ="longitud" type="text" class="form-control" value="<?php echo ($obj !=null) ? $obj->getLongitud() : ""?>" required >
+                    
                 </div>
             </div>
         </div>
@@ -45,7 +47,7 @@ $listaCiudad = $objCE->buscar(null);
                     <label for="nombre" class="control-label">Ciudad:</label>
                     <div class="input-group">
 
-                        <select class="form-control" id="ciudad" name="ciudad" >
+                        <select class="form-control" id="ciu_id" name="ciu_id" >
                             <?php
                             foreach ($listaCiudad as $ciudad):
                                 if ($obj != null && $obj->getobjCiudad()->getid()==$ciudad->getid())
@@ -60,7 +62,7 @@ $listaCiudad = $objCE->buscar(null);
             </div>
         </div>
 
-        
+    
         <input type="submit" class="btn btn-tpcu btn-block" value="<?php echo ($datos['accion'] !=null) ? $datos['accion'] : "nose"?>">
     </form>
     <br>

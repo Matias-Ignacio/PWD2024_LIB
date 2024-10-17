@@ -79,13 +79,13 @@ class AbmCiudad{
      */
     public function alta($param){
         $resp = false;
-        if($this->validarTodo($param)){
+      //  if($this->validarTodo($param)){
             $elObjCiudad = $this->cargarObjeto($param);
             if ($elObjCiudad != null and $elObjCiudad->insertar())
             {
                 $resp = true;
             }
-        }
+        //}
         return $resp;
     }
 
@@ -130,7 +130,7 @@ class AbmCiudad{
      */
     public function modificacion($param){
         $resp = false;
-        if($this->validarTodo($param)){
+        //if($this->validarTodo($param)){
             if ($this->seteadosCamposClaves($param))
             {
                 $elObjCiudad = $this->cargarObjeto($param);
@@ -139,7 +139,7 @@ class AbmCiudad{
                     $resp = true;
                 }
             }
-        }
+       // }
         return $resp;
     }
 
@@ -175,7 +175,8 @@ class AbmCiudad{
             if (isset($param['ciu_nombre']))
                 $where .= " and ciu_nombre = '".$param['ciu_nombre']."'";    
         }
-        $arreglo = Ciudad::listar($where);  
+        $objCiudad = new Ciudad();
+        $arreglo = $objCiudad->listar($where);  
         return $arreglo;
     }
 
