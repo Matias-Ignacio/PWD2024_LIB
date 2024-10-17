@@ -16,5 +16,9 @@
   <script src="../Js/funciones.js"></script>
   <script src="../Js/carousel.js"></script>
 
+<!-- CDN de la libreria openstreetmap -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 
   

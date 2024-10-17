@@ -36,8 +36,6 @@ $comerciosJsArray = json_encode($comerciosJsArray);
     <h1 class='text-center mb-4 text-white'><?php echo $titulo;?></h1>
 </div>
 <head>
-    <!-- CDN de la libreria openstreetmap -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
     #map {
         height: 400px;
@@ -66,16 +64,11 @@ $comerciosJsArray = json_encode($comerciosJsArray);
         ?>
     </tbody>
 </table>
-
 <body>
     <div id="map"></div>
     <div class="d-flex justify-content-center align-items-center">
         <button class="btn btn-primary mt-5" onclick="history.back();">Atr&aacute;s</button>
     </div>
-
-        <!-- CDN de la libreria openstreetmap -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    
     <script>
         var latitud =  <?php echo $latitud; ?>;
         var longitud =  <?php echo $longitud; ?>;
@@ -97,7 +90,6 @@ $comerciosJsArray = json_encode($comerciosJsArray);
             .bindPopup('Ubicación aproximada basada en la IP.')
             .openPopup();
         
-
            // ------ Agregar marcadores para cada comercio ---------
         comercios.forEach(function(comercio) {
         L.marker([comercio.latitud, comercio.longitud]).addTo(map)
