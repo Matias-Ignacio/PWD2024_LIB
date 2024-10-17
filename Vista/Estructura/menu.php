@@ -19,15 +19,16 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gr&aacute;ficos</a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../grafico/guia.php">Gu&iacute;a de JpGraph </a></li>
               <li><a class="dropdown-item" href="../grafico/01_verGraficoAuto.php">Gr&aacute;ficos </a></li>
               <li><a class="dropdown-item" href="../grafico/01_verGraficoAuto_slide.php">Gr&aacute;ficos Carousel </a></li>
-              <li><a class="dropdown-item" href="../grafico/guia.php">Gu&iacute;a </a></li>
             </ul>
           </li>
           <!-- Geolocalizacion -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Geolocalizacion</a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../geolocalizacion/guiaGeoIp.php">Guia de GeoIp</a></li>
               <li><a class="dropdown-item" href="../geolocalizacion/geoIp.php">Ingresa un IP para ver la ubicacion</a></li>
               <li><a class="dropdown-item" href="../geolocalizacion/dosIps.php">Ingresa dos IPs para ver la distancia entre ellas</a></li>
               <li><a class="dropdown-item" href="../ciudad/index.php">Ciudades</a></li>
