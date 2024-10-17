@@ -54,7 +54,7 @@
                         echo '<td>'.$ciudad['ciu_nombre'].'</td>';
 
                         echo '<td><a class="btn btn-color" role="button" href="editar.php?accion=editar&ciu_id='.$ciudad['ciu_id'].'"><i class="bi bi-pencil"></i></a>   ';
-                        echo '<a class="btn btn-outline-danger" role="button" href="editar.php?accion=borrar&ciu_id='.$ciudad['ciu_id'].'"><i class="bi bi-trash3-fill"></i></a></td></tr>';
+                        echo '<button class="btn btn-outline-danger" role="button" onclick="confirmarBorrar('.$ciudad['ciu_id'].', \'borrar.php?accion=borrar&ciu_id=\')"><i class="bi bi-trash3-fill"></i></button></td></tr>';
                     }
                 }
                 ?>
@@ -69,6 +69,46 @@
         </div>
     </div>
 </div>
+
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Confirmación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar esta ciudad?
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" id="btnConfirmar" class="btn btn-danger">Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+let comercioId = '';
+let urlAccion = '';
+
+function confirmarBorrar(id, url) {
+    comercioId = id;
+    urlAccion = url;
+    var myModal = new bootstrap.Modal(document.getElementById('modalConfirmacion'), {
+        keyboard: false
+    });
+    myModal.show();
+}
+
+document.getElementById('btnConfirmar').addEventListener('click', function() {
+    // Redirige a la URL de borrado con el ID de la ciudad
+    window.location.href = urlAccion + comercioId;
+});
+</script>
 
 <!-- Footer -->
 <?php

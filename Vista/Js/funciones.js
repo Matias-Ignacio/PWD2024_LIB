@@ -236,3 +236,12 @@ function validarLetraNum(cadena){
     return true;
 }
 
+//Confirmacion de borrar elementos de la BD
+function confirmarBorrar(clave,idModal,idBoton,idSpan,hrefPath){
+    var modal = new bootstrap.Modal(idModal)
+    modal.show()
+    var botonBorrar = document.getElementById(idBoton)
+    botonBorrar.setAttribute("href",hrefPath+clave)
+    var mostrarDni = document.getElementById(idSpan)
+    mostrarDni.innerHTML = clave
+}
